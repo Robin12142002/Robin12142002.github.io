@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .box:hover {
+            width: 200px;
+            height: 200px;
+
+            background-color: lightblue;
+
+            transition-property: all;
+            transition-duration: 2s;
+            transition-delay: 0s;
+            transition-timing-function: ease-in-out;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            background-color: pink;
+
+            margin-left: auto;
+            margin-right: auto;
+
+            animation-name: double-circle;
+            animation-timing-function: ease;
+            animation-duration: 1s;
+            animation-delay: 0s;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+
+        }
+
+        @keyframes double-circle {
+            from {
+                width: 100px;
+                height: 100px;
+
+            }
+
+            to {
+                width: 200px;
+                height: 200px;
+
+            }
+
+        }
+
+        /*
+        .circle:hover{
+            animation-name: double-circle;
+            animation-duration: 1s;
+            animation-delay: 0;
+        }
+            */
+
+        @keyframes jumping-fish {
+            0% {
+                transform: rotate(0deg) scaleY(1);
+            }
+
+            50% {
+                transform: rotate(5deg) scaleY(1.1);
+            }
+
+            100% {
+                transform: rotate(0deg) scaleY(1);
+            }
+        }
+
+        .jumping-fish-animation {
+            animation-name: jumping-fish;
+            animation-duration: 0.3s;
+            animation-iteration-count: infinite;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="circle">
+    </div>
+
+    <div class="box">
+    </div>
+
+    <img class="jumping-fish-animation" src="https://i.imgur.com/BaWzqYf.jpg">
+</body>
+
+</html>
