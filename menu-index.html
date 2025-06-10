@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>美食網站</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    /* 頁首 */
+    header {
+      background-color: #5a3c1b;
+      padding: 20px;
+      color: white;
+      font-size: 24px;
+      position: relative;
+    }
+
+    /* 漢堡按鈕 */
+    .hamburger {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hamburger div {
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      margin: 6px 0;
+    }
+
+    /* 側邊選單 */
+    .side-menu {
+      position: fixed;
+      top: 60px; /* 緊貼 header 下緣 */
+      right: 0;
+      width: 160px;
+      height: calc(100% - 100px); /* 頂 60 + 底 40 空白 */
+      background-color: #a36f36;
+      color: white;
+      z-index: 1000;
+      padding: 20px 10px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .side-menu.open {
+      transform: translateX(0);
+    }
+
+    .close-btn {
+      font-size: 24px;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    .menu-list {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .menu-list a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 10px 0;
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid #ffffff33;
+      font-size: 16px;
+    }
+
+    .menu-list a:hover {
+      background-color: #8c5b27;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    網站名稱
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <div class="side-menu" id="menu">
+    <div class="close-btn" onclick="toggleMenu()">✕</div>
+    <div class="menu-list">
+      <a href="#">中正區</a>
+      <a href="#">大同區</a>
+      <a href="#">中山區</a>
+      <a href="#">松山區</a>
+      <a href="#">大安區</a>
+      <a href="#">萬華區</a>
+      <a href="#">信義區</a>
+      <a href="#">士林區</a>
+      <a href="#">北投區</a>
+      <a href="#">內湖區</a>
+      <a href="#">南港區</a>
+      <a href="#">文山區</a>
+      <a href="#">爆破者</a>
+    </div>
+  </div>
+
+  <script>
+    const menu = document.getElementById("menu");
+
+    function toggleMenu() {
+      if (menu.classList.contains("open")) {
+        menu.classList.remove("open");
+      } else {
+        menu.classList.add("open");
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
+
