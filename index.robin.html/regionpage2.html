@@ -2,124 +2,139 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1280, initial-scale=1.0">
-<title>食破天龍國</title>
+<title>食破天龍國｜首頁</title>
 <style>
   body {
     margin: 0;
     font-family: sans-serif;
+    background-color: #f0e6d2; /* 頁面背景色 */
   }
+
+  /* ========== 上方bar區塊 ========== */
   .top-bar {
-    width: 100%;
-    height: 50px;
+    width: 1280px;
+    height: 88px;
     background-color: #5c3d0d; /* 深棕色背景 */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #e0ad68; /* 米黃色字體 */
+    color: #e0ad68; /* 米黃色文字 */
     font-size: 24px;
     font-weight: bold;
     padding: 0 20px;
     box-sizing: border-box;
+    margin: 0 auto; /* 水平置中 */
   }
+
   .logo-container {
     display: flex;
     align-items: center;
   }
+
   .logo-img {
-    height: 64px; /* 圖示高度，可視覺調整 */
-    margin-right: auto;
-    margin-left: auto;
+    height: 64px; /* logo 圖片高度 */
+    margin-right: 10px;
   }
-  .menu-icon {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
+  .menu-icon img {
+    height: 30px;
     cursor: pointer;
   }
-  .menu-icon div {
-    width: 30px;
-    height: 3px;
-    background-color: #fff;
-    margin: 4px 0;
 
+  /* ========== 下方粉色區塊（含卡片容器） ========== */
   .pink-section {
+    width: 1152px;
+    min-height: 688px; /* 初始高度 688，可因卡片數量自動向下延展 */
     background-color: #fddedf; /* 粉紅色背景 */
-    padding: 50px; /* 上下左右皆50 */
-  }
-
-  .card-container {
+    padding: 50px; /* 上下左右內距50 */
+    margin: 20px auto; /* 區塊水平置中，與上方bar留間距 */
+    box-sizing: border-box;
     display: flex;
-    gap: 10px; /* 白色卡片間距10px */
-    flex-wrap: wrap;
-    justify-content: center; /* 置中對齊 */
+    flex-wrap: wrap; /* 多張卡片時自動換行 */
+    gap: 10px; /* 白色資訊卡間距10px */
+    justify-content: center;
+    align-content: flex-start;
   }
 
+  /* ========== 白色資訊卡區塊 ========== */
   .card {
+    width: 520px;
+    height: 588px;
     background-color: #ffffff;
     border-radius: 8px;
-    overflow: hidden;
-    width: 300px; /* 卡片寬度，依需求可調整 */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 置中卡片內容 */
+    padding: 10px;
+    box-sizing: border-box;
   }
 
   .card img {
-    width: 100%;
-    display: block;
-  }
-
-  .card-content {
-    padding: 10px;
+    width: 480px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
   }
 
   .card-title {
     font-weight: bold;
-    margin: 0 0 10px;
+    margin: 10px 0;
+    text-align: center;
   }
 
   .card-text {
     font-size: 14px;
     color: #333;
-  }
+    text-align: center;
   }
 </style>
 </head>
+
 <body>
 
-<!-- 上方 bar -->
+<!-- 🟤 上方bar區 -->
 <div class="top-bar">
   <div class="logo-container">
-    <img src="logo.png" alt="logo" class="logo-img">
+    <!-- 🔵 LOGO 圖片（可自行更換 src） -->
+    <img src="logo.png" alt="網站 Logo" class="logo-img">
     <span>食破天龍國</span>
   </div>
 
   <div class="menu-icon">
+    <!-- 🔵 右側選單 icon（可自行更換 src） -->
     <img src="icon.png" alt="menu icon">
   </div>
 </div>
 
-
-<!-- bar 底下的卡片區 -->
+<!-- 🌸 下方粉色背景區塊 -->
 <div class="pink-section">
-  <div class="card-container">
-    <div class="card">
-      <img src="beef.png" alt="牛舌圖片">
-      <div class="card-content">
-        <h3 class="card-title">標題範例：日本牛舌真的很好吃我很愛</h3>
-        <p class="card-text">內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="beef.png" alt="牛舌圖片">
-      <div class="card-content">
-        <h3 class="card-title">標題範例：日本牛舌真的很好吃我很愛</h3>
-        <p class="card-text">內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
-      </div>
-    </div>
+  
+  <!-- 🟨 白色資訊卡區塊 1 -->
+  <div class="card">
+    <img src="beef.png" alt="牛舌圖片">
+    <h3 class="card-title">標題範例：日本牛舌真的很好吃我很愛</h3>
+    <p class="card-text">內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
   </div>
+
+  <!-- 🟨 白色資訊卡區塊 2 -->
+  <div class="card">
+    <img src="beef.png" alt="牛舌圖片">
+    <h3 class="card-title">標題範例：日本牛舌真的很好吃我很愛</h3>
+    <p class="card-text">內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
+  </div>
+
+  <!-- 🟨 更多白色資訊卡（可複製貼上 .card） -->
+  <!--
+  <div class="card">
+    <img src="beef.png" alt="牛舌圖片">
+    <h3 class="card-title">標題範例：日本牛舌真的很好吃我很愛</h3>
+    <p class="card-text">內文內文內文內文內文內文內文內文內文內文內文</p>
+  </div>
+  -->
+
 </div>
-
-
 
 </body>
 </html>
