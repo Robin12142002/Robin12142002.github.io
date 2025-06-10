@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: #FFF0DC;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            background-color: #543A14;
+            padding: 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar span {
+            position: absolute;
+            left: 20px;
+            font-size: 30px;
+            color: #F0BB78;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif
+        }
+
+        .navbar img {
+            height: 80px;
+            object-fit: contain;
+        }
+    </style>
+    <style>
+        .content {
+            max-width: 700px;
+            position: relative;
+            top: -60px;
+            margin: 20px auto;
+            padding: 0 20px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar 固定在最上方 -->
+    <div class="navbar"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 80px; background-color: #543A14; padding: 30px; display: flex; justify-content: center; align-items: center; z-index: 1000;">
+        <span
+            style="position: absolute; left: 20px; font-size: 30px; color: #F0BB78; font-weight: bold; font-family:'Times New Roman', Times, serif">食破天龍國</span>
+        <img src="logo.png" style="height: 80px; object-fit: contain;">
+    </div>
+
+
+    <div style="margin-top: 80px; position: relative;">
+        <div style="width: 100%; max-width: 1200px; height: 800px; overflow: hidden; margin: 0 auto;">
+            <img src="IMG_2542.jpg" alt="IMG_2542" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <!-- 白底黑字標題浮在圖片上 -->
+        <div style="
+      width: 80%;
+      max-width: 800px;
+      height: 200px;
+      background-color: white;
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 10px;
+      color: black;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    ">
+<h2 style="
+  font-size: 36px;
+  text-align: center;
+  line-height: 1.4;
+  margin: 0;
+">
+  北投粟家牛肉麵 經典紅燒湯頭＆最頂小黃瓜
+</h2>
+
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; font-size: 20px; margin-top: 20px;">
+                <span>作者：孔德皓</span>
+                <span>發布日期：2025/6/17</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 內容區塊 -->
+
+       <div class="content" style="
+  max-width: 700px;
+  margin: 200px auto 60px auto;
+  padding: 0 20px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+">
+        <p>
+            由於過往眷村文化的緣故，北投有很多知名的牛肉麵店，「吳家」、「志明」、「粟家」三家店是許多人來到北投的必訪行程。可能是因為地點優勢，吳家與志明的知名度及生意一直以來都勝過粟家，不過在我心中，粟家的地位無可取代，不是因為它的味道比別人好，單純因為粟家離我家最近。
+        </p>
+
+        <p>
+            從小到大，只要那天家裡沒有人煮晚餐，有非常高的可能性，家人會選擇買牛肉麵回來吃，而粟家又只需五分鐘的路程，自然變成我最常吃的牛肉麵。某種程度上，粟家形塑了我對牛肉麵的印象，這種印象久而久之化作一種飲食偏好，所以我牛肉麵幾乎只吃紅燒湯頭，也排斥寬厚的麵條。
+        </p>
+
+        <img src="IMG_2556.jpg" style="width: 100%; border-radius: 10px; margin: 30px 0;">
+
+        <p>
+            粟家的菜單相當豐富，較多人會點紅燒或茄汁牛肉麵，當然如同許多牛肉麵店，粟家也有賣牛腩飯這種米食，但我個人認為，都來牛肉麵店了，點飯的人不知道在想什麼。另外，粟家的小菜選項也很豐富，各式滷味、涼拌菜都有，我最喜歡的是小黃瓜，味道清甜，口感爽脆。
+        </p>
+
+        <img src="IMG_2545.jpg" style="width: 100%; border-radius: 10px; margin: 30px 0;">
+
+        <p>
+            如果要將牛肉麵分為湯、麵、肉三樣元素，粟家的能力值發展得很均勻。紅燒湯頭口味偏重，還沒加入辣油就有些微的刺激；麵的部分有五種選項，可以依照喜好挑選，沒有想法的話，店家會用一般麵條煮，口感與嚼勁適中；至於牛肉則大塊軟嫩，小碗會放四、五塊，連牙口不好的年長者也能品嚐。其實粟家雖然價格稍高，但至少份量很足，正常食量的人選小碗就好，大碗真的有點太大。
+        </p>
+    </div>
+
+</body>
+
+</html>
