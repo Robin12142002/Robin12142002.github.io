@@ -38,19 +38,51 @@
       font-weight: bold;
       font-family: 'Times New Roman', serif;
     }
-    .navbar img {
-      height: 80px;
-      object-fit: contain;
-    }
+
+    .navbar-left {
+    position: absolute;
+    left: 10px;
+    margin-top: 15px;
+  margin-left: 20px;
+}
+
+.navbar-center{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.navbar img {
+  height: 60px; /* 根據需要調整 */
+}
 
     </style>
+
+    
 </head>
 
 <body>
-    <div class="navbar">
-    <span>食破天龍國</span>
-    <img src="logo.png" alt="網站 Logo" />
+  
+<div class="navbar">
+  <div class="navbar-left">
+    <img src="真的食破天龍國.png" alt="左圖" >
   </div>
+  <div class="navbar-center">
+    <img src="logo.png" alt="中圖">
+  </div>
+</div>
+  </div>
+
+  <style>
+.left-align {
+  display: block;
+  margin-left: 0;
+}
+</style>
+
+
+
+
     
 <style>
   .author-section {
