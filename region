@@ -1,66 +1,108 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>網站名稱</title>
-<style>
-  body { font-family: sans-serif; background-color: #fce5d9; }
-  header { background: #7b5c39; color: #fff; padding: 10px; text-align: center; }
-  .logo { text-align: center; margin: 10px; }
-  .menu { position: absolute; top: 10px; right: 10px; background: #7b5c39; color: #fff; padding: 5px; cursor: pointer; }
-  .menu-list { display: none; position: absolute; top: 30px; right: 10px; background: #fff; color: #000; border: 1px solid #ccc; }
-  .menu-list li { list-style: none; padding: 5px; }
-  .container { max-width: 600px; margin: 20px auto; }
-  h2 { text-align: center; }
-  .card { background: #fff; margin: 10px 0; padding: 10px; border-radius: 10px; }
-  .card img { width: 100%; border-radius: 10px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .box:hover {
+            width: 200px;
+            height: 200px;
+
+            background-color: lightblue;
+
+            transition-property: all;
+            transition-duration: 2s;
+            transition-delay: 0s;
+            transition-timing-function: ease-in-out;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            background-color: pink;
+
+            margin-left: auto;
+            margin-right: auto;
+
+            animation-name: double-circle;
+            animation-timing-function: ease;
+            animation-duration: 1s;
+            animation-delay: 0s;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+
+        }
+
+        @keyframes double-circle {
+            from {
+                width: 100px;
+                height: 100px;
+
+            }
+
+            to {
+                width: 200px;
+                height: 200px;
+
+            }
+
+        }
+
+        /*
+        .circle:hover{
+            animation-name: double-circle;
+            animation-duration: 1s;
+            animation-delay: 0;
+        }
+            */
+
+        @keyframes jumping-fish {
+            0% {
+                transform: rotate(0deg) scaleY(1);
+            }
+
+            50% {
+                transform: rotate(5deg) scaleY(1.1);
+            }
+
+            100% {
+                transform: rotate(0deg) scaleY(1);
+            }
+        }
+
+        .jumping-fish-animation {
+            animation-name: jumping-fish;
+            animation-duration: 0.3s;
+            animation-iteration-count: infinite;
+        }
+    </style>
+
+
 </head>
+
 <body>
 
-<header>
-  <div>網站名稱</div>
-  <div class="logo">🐮</div>
-  <div class="menu">☰</div>
-  <ul class="menu-list">
-    <li>中正區</li>
-    <li>大同區</li>
-    <li>中山區</li>
-    <li>松山區</li>
-    <li>大安區</li>
-    <li>萬華區</li>
-    <li>信義區</li>
-    <li>士林區</li>
-    <li>北投區</li>
-    <li>內湖區</li>
-    <li>南港區</li>
-    <li>文山區</li>
-    <li>爆橘山</li>
-  </ul>
-</header>
+    <div class="circle">
+    </div>
 
-<div class="container">
-  <h2>#中山</h2>
-  <div class="card">
-    <img src="https://via.placeholder.com/400x300" alt="圖片">
-    <h3>標題範例：日本牛牛舌真的很好吃我很愛</h3>
-    <p>內文內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容</p>
-  </div>
-  <div class="card">
-    <img src="https://via.placeholder.com/400x300" alt="圖片">
-    <h3>標題範例：日本牛牛舌真的很好吃我很愛</h3>
-    <p>內文內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容</p>
-  </div>
-</div>
+    <div class="box">
+    </div>
+    <h1>yoyoyo</h1>
+    <h2>嘿嘿嘿，你好啊！！！</h2>
 
-<script>
-  const menu = document.querySelector('.menu');
-  const menuList = document.querySelector('.menu-list');
-  menu.addEventListener('click', () => {
-    menuList.style.display = (menuList.style.display === 'block') ? 'none' : 'block';
-  });
-</script>
-
+    <img class="jumping-fish-animation" src="https://i.imgur.com/BaWzqYf.jpg">
 </body>
+
 </html>
