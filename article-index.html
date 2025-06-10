@@ -29,22 +29,24 @@
             justify-content: center;
             align-items: center;
         }
+        .navbar-left {
+    position: absolute;
+    left: 10px;
+    margin-top: 22px;
+  margin-left: 20px;
+}
 
-        .navbar span {
-            position: absolute;
-            left: 20px;
-            font-size: 30px;
-            color: #F0BB78;
-            font-weight: bold;
-            font-family: 'Times New Roman', Times, serif
-        }
-
-        .navbar img {
-            height: 80px;
-            object-fit: contain;
-        }
+.navbar-center{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.navbar img {
+  height: 60px; /* 根據需要調整 */
     </style>
     <style>
+}
         .content {
             max-width: 700px;
             position: relative;
@@ -67,9 +69,23 @@
     <!-- Navbar 固定在最上方 -->
     <div class="navbar"
         style="position: fixed; top: 0; left: 0; width: 100%; height: 80px; background-color: #543A14; padding: 30px; display: flex; justify-content: center; align-items: center; z-index: 1000;">
-        <span
-            style="position: absolute; left: 20px; font-size: 30px; color: #F0BB78; font-weight: bold; font-family:'Times New Roman', Times, serif">食破天龍國</span>
-        <img src="logo.png" style="height: 80px; object-fit: contain;">
+    
+        <div class="navbar">
+  <div class="navbar-left">
+    <img src="真的食破天龍國.png" alt="左圖" >
+  </div>
+  <div class="navbar-center">
+    <img src="logo.png" alt="中圖">
+  </div>
+</div>
+  </div>
+
+  <style>
+.left-align {
+  display: block;
+  margin-left: 0;
+}
+</style>
     </div>
 
 
@@ -102,7 +118,7 @@
   line-height: 1.4;
   margin: 0;
 ">
-  北投粟家牛肉麵 經典紅燒湯頭＆最頂小黃瓜
+  北投粟家牛肉麵　經典紅燒湯頭＆最頂小黃瓜
 </h2>
 
             <div
