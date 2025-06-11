@@ -1,7 +1,4 @@
-<!-- header.html -->
-<!-- 🟤 上方 navbar + 漢堡選單 -->
-
-<!-- Navbar CSS -->
+<!-- ✅ Navbar CSS（放在 <head> 區域） -->
 <style>
   .navbar {
     background-color: #543A14;
@@ -9,35 +6,16 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px;
-    /* ✅ 高度固定80px */
+    height: 80px; /* ✅ 高度固定80px */
     display: flex;
-    justify-content: space-between;
-    /* ✅ 左右兩側對齊 */
-    align-items: center;
-    /* ✅ 垂直置中 */
-    padding: 0 20px;
-    /* ✅ 左右內距 */
+    justify-content: space-between; /* ✅ 左右對齊 */
+    align-items: center; /* ✅ 垂直置中 */
+    padding: 0 20px; /* ✅ 左右內距 */
     z-index: 1000;
   }
 
-  .navbar-left {
-    position: absolute;
-    left: 10px;
-    margin-top: 22px;
-    margin-left: 20px;
-  }
-
-  .navbar-center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
   .navbar-left img {
-    height: 60px;
-    /* logo 大小 */
+    height: 60px; /* ✅ logo 高度 */
   }
 
   .hamburger {
@@ -58,10 +36,10 @@
 
   .side-menu {
     position: fixed;
-    top: 60px;
+    top: 80px; /* ✅ 從 navbar 下方開始 */
     right: 0;
     width: 140px;
-    height: calc(100% - 100px);
+    height: calc(100% - 80px);
     background-color: #a36f36;
     color: white;
     z-index: 1000;
@@ -129,24 +107,22 @@
   }
 </style>
 
-<!-- Navbar -->
+<!-- ✅ Navbar + 漢堡選單 HTML（放在 <body> 區域） -->
 <div class="navbar">
+  <!-- 左邊 logo -->
   <div class="navbar-left">
-    <img src="真的食破天龍國.png" alt="左圖">
+    <img src="真的食破天龍國.png" alt="logo">
   </div>
-  <div class="navbar-center">
-    <img src="logo.png" alt="中圖">
-  </div>
-</div>
 
-<!-- Hamburger Menu -->
- <div class="hamburger" onclick="toggleMenu()">
+  <!-- 右邊漢堡選單 icon -->
+  <div class="hamburger" onclick="toggleMenu()">
     <div></div>
     <div></div>
     <div></div>
   </div>
 </div>
 
+<!-- ✅ 漢堡選單側邊欄 -->
 <div class="side-menu" id="menu">
   <div class="close-btn" onclick="toggleMenu()">✕</div>
   <div class="menu-list">
@@ -176,7 +152,7 @@
   </div>
 </div>
 
-<!-- Hamburger + Dropdown Menu JS -->
+<!-- ✅ 漢堡和下拉選單的互動 JS -->
 <script>
   const menu = document.getElementById("menu");
   const dropdown = document.getElementById("dropdown");
