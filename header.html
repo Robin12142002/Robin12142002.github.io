@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>完整 Header 整合</title>
+<title>修正版 Header</title>
 
 <style>
   body {
@@ -21,7 +21,7 @@
     height: 80px;
     display: flex;
     justify-content: space-between; /* 左中右三區塊 */
-    align-items: center; /* 垂直置中 */
+    align-items: center; /* ✅ 三區塊垂直置中 */
     padding: 0 20px;
     z-index: 1000;
   }
@@ -42,7 +42,6 @@
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    z-index: 1001;
   }
 
   .hamburger div {
@@ -59,7 +58,7 @@
     height: calc(100% - 80px);
     background-color: #a36f36;
     color: white;
-    z-index: 1000;
+    z-index: 2000; /* ✅ 提高層級，避免被 navbar 遮住 */
     padding: 15px 10px;
     box-sizing: border-box;
     overflow-y: auto;
@@ -127,7 +126,7 @@
 
 <body>
 
-<!-- 🔵 Navbar -->
+<!-- 🟤 Navbar：三個元素在同一層次 -->
 <div class="navbar">
   <!-- 左 logo -->
   <div class="navbar-left">
@@ -139,7 +138,7 @@
     <img src="logo.png" alt="中間 logo">
   </div>
 
-  <!-- 右側漢堡選單 icon -->
+  <!-- 右側漢堡 icon -->
   <div class="hamburger" onclick="toggleMenu()">
     <div></div>
     <div></div>
@@ -177,7 +176,7 @@
   </div>
 </div>
 
-<!-- ✅ JS -->
+<!-- 🟤 JS -->
 <script>
   const menu = document.getElementById("menu");
   const dropdown = document.getElementById("dropdown");
