@@ -46,7 +46,8 @@
     width: 1152px;
     min-height: 688px; /* 初始高度 688，可因卡片數量自動向下延展 */
     background-color: #fddedf; /* 粉紅色背景 */
-    padding: 50px; /* 上下左右內距50 */
+    padding: 80px 50px 50px 50px; /* 上下左右內距50 */
+    border-radius: 6px/* 區塊圓角 */
     margin: 20px auto; /* 區塊水平置中，與上方bar留間距 */
     box-sizing: border-box;
     display: flex;
@@ -78,6 +79,23 @@
     margin-bottom: 10px;
   }
 
+  /* 白色資訊卡 hover 時放大效果 */
+.card:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+/* 圖片 hover 時放大+陰影效果 */
+.card img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;}
+  
+  
   .card-title {
     font-weight: bold;
     margin: 10px 0;
