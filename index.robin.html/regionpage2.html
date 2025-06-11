@@ -1,150 +1,159 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
-<meta charset="UTF-8">
-<title>食破天龍國｜首頁</title>
-<style>
-  body {
-    margin: 0;
-    font-family: sans-serif;
-    background-color: #f0e6d2; /* 頁面背景色 */
-  }
+    <meta charset="UTF-8">
+    <title>食破天龍國｜首頁</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-color: #f0e6d2;
+            /* 頁面背景色 */
+        }
 
-  /* ========== 上方bar區塊 ========== */
-  .top-bar {
-    width: 100%;
-    height: 88px;
-    background-color: #5c3d0d; /* 深棕色背景 */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #e0ad68; /* 米黃色文字 */
-    font-size: 24px;
-    font-weight: bold;
-    padding: 0 20px;
-    box-sizing: border-box;
-    margin: 0 auto; /* 水平置中 */
-  }
+        /* ========== 上方bar區塊 ========== */
+        .top-bar {
+            width: 100%;
+            height: 88px;
+            background-color: #5c3d0d;
+            /* 深棕色背景 */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #e0ad68;
+            /* 米黃色文字 */
+            font-size: 24px;
+            font-weight: bold;
+            padding: 0 20px;
+            box-sizing: border-box;
+            margin: 0 auto;
+            /* 水平置中 */
+        }
 
-  .logo-container {
-    display: flex;
-    align-items: center;
-  }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
 
-  .logo-img {
-    height: 64px; /* logo 圖片高度 */
-    margin-right: 10px;
-  }
+        .logo-img {
+            height: 64px;
+            /* logo 圖片高度 */
+            margin-right: 10px;
+        }
 
-  .menu-icon img {
-    height: 30px;
-    cursor: pointer;
-  }
+        .menu-icon img {
+            height: 30px;
+            cursor: pointer;
+        }
 
-  /* ========== 下方粉色區塊（含卡片容器） ========== */
-  .pink-section {
-    width: 1152px;
-    min-height: 688px; /* 初始高度 688，可因卡片數量自動向下延展 */
-    background-color: #fddedf; /* 粉紅色背景 */
-    padding: 80px 50px 50px 50px; /* 上下左右內距50 */
-    border-radius: 6px/* 區塊圓角 */
-    margin: 20px auto; /* 區塊水平置中，與上方bar留間距 */
-    box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap; /* 多張卡片時自動換行 */
-    gap: 10px; /* 白色資訊卡間距10px */
-    justify-content: center;
-    align-content: flex-start;
-  }
+        /* ========== 下方粉色區塊（含卡片容器） ========== */
+        .pink-section {
+            width: 1152px;
+            min-height: 688px;
+            background-color: #fddedf;
+            padding: 80px 50px 50px 50px;
+            margin: 20px auto;
+            /* 這行確保水平居中！ */
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            align-content: flex-start;
+            border-radius: 6px;
+        }
 
-  /* ========== 白色資訊卡區塊 ========== */
-  .card {
-    width: 520px;
-    height: 588px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* 置中卡片內容 */
-    padding: 10px;
-    box-sizing: border-box;
-  }
+        /* ========== 白色資訊卡區塊 ========== */
+        .card {
+            width: 520px;
+            height: 588px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 置中卡片內容 */
+            padding: 10px;
+            box-sizing: border-box;
+        }
 
-  .card img {
-    width: 480px;
-    height: 360px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 10px;
-  }
+        .card img {
+            width: 480px;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
 
-  /* 白色資訊卡 hover 時放大效果 */
-.card:hover {
-  transform: scale(1.02);
-  transition: transform 0.3s ease;
-}
+        /* 白色資訊卡 hover 時放大效果 */
+        .card:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease;
+        }
 
-/* 圖片 hover 時放大+陰影效果 */
-.card img {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        /* 圖片 hover 時放大+陰影效果 */
+        .card img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.card img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  cursor: pointer;}
-  
-  
-  .card-title {
-    font-weight: bold;
-    margin: 10px 0;
-    text-align: center;
-  }
+        .card img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
 
-  .card-text {
-    font-size: 14px;
-    color: #333;
-    text-align: center;
-  }
-</style>
+
+        .card-title {
+            font-weight: bold;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .card-text {
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- 🟤 上方bar區 -->
-<div class="top-bar">
-  <div class="logo-container">
-    <!-- 🔵 LOGO 圖片（可自行更換 src） -->
-    <img src="logo.png" alt="網站 Logo" class="logo-img">
-    <span>食破天龍國</span>
-  </div>
+    <!-- 🟤 上方bar區 -->
+    <div class="top-bar">
+        <div class="logo-container">
+            <!-- 🔵 LOGO 圖片（可自行更換 src） -->
+            <img src="logo.png" alt="網站 Logo" class="logo-img">
+            <span>食破天龍國</span>
+        </div>
 
-  <div class="menu-icon">
-    <!-- 🔵 右側選單 icon（可自行更換 src） -->
-    <img src="icon.png" alt="menu icon">
-  </div>
-</div>
+        <div class="menu-icon">
+            <!-- 🔵 右側選單 icon（可自行更換 src） -->
+            <img src="icon.png" alt="menu icon">
+        </div>
+    </div>
 
-<!-- 🌸 下方粉色背景區塊 -->
-<div class="pink-section">
-  
-  <!-- 🟨 白色資訊卡區塊 1 -->
-  <div class="card">
-    <img src="beef.png" alt="牛舌圖片">
-    <h3 class="card-title">標題範例：日本牛舌真的很好吃我很愛</h3>
-    <p class="card-text">內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
-  </div>
+    <!-- 🌸 下方粉色背景區塊 -->
+    <div class="pink-section">
 
-  <!-- 🟨 白色資訊卡區塊 2 -->
-  <div class="card">
-    <img src="beef.png" alt="牛舌圖片">
-    <h3 class="card-title">標題範例：日本牛舌真的很好吃我很愛</h3>
-    <p class="card-text">內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
-  </div>
+        <!-- 🟨 白色資訊卡區塊 1 -->
+        <div class="card">
+            <img src="beef.png" alt="牛舌圖片">
+            <h3 class="card-title">標題範例：日本牛舌真的很好吃我很愛</h3>
+            <p class="card-text">內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
+        </div>
 
-  <!-- 🟨 更多白色資訊卡（可複製貼上 .card） -->
-  <!--
+        <!-- 🟨 白色資訊卡區塊 2 -->
+        <div class="card">
+            <img src="beef.png" alt="牛舌圖片">
+            <h3 class="card-title">標題範例：日本牛舌真的很好吃我很愛</h3>
+            <p class="card-text">內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
+        </div>
+
+        <!-- 🟨 更多白色資訊卡（可複製貼上 .card） -->
+        <!--
   <div class="card">
     <img src="beef.png" alt="牛舌圖片">
     <h3 class="card-title">標題範例：日本牛舌真的很好吃我很愛</h3>
@@ -152,7 +161,8 @@
   </div>
   -->
 
-</div>
+    </div>
 
 </body>
+
 </html>
