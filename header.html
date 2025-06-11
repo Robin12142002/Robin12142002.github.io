@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>修正版 Header</title>
+<title>最終對齊完美版 Header</title>
 
 <style>
   body {
@@ -20,19 +20,22 @@
     width: 100%;
     height: 80px;
     display: flex;
-    justify-content: space-between; /* 左中右三區塊 */
-    align-items: center; /* ✅ 三區塊垂直置中 */
+    align-items: center; /* 垂直置中 */
+    justify-content: space-between; /* 左中右三個區塊自動分散 */
     padding: 0 20px;
     z-index: 1000;
   }
 
-  .navbar-left img {
-    height: 60px;
+  .navbar-left img,
+  .navbar-center img {
+    height: 65px; /* 保持相同高度，中央 logo 寬高 68.31x65.5 可由原圖控制比例 */
   }
 
-  .navbar-center img {
-    width: 68.31px;
-    height: 65.5px;
+  .navbar-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1; /* 中間 logo 占滿中間空間 */
   }
 
   .hamburger {
@@ -52,13 +55,13 @@
 
   .side-menu {
     position: fixed;
-    top: 80px; /* 從 navbar 底下開始 */
+    top: 80px;
     right: 0;
     width: 140px;
     height: calc(100% - 80px);
     background-color: #a36f36;
     color: white;
-    z-index: 2000; /* ✅ 提高層級，避免被 navbar 遮住 */
+    z-index: 2000; /* 確保選單永遠顯示在最上層 */
     padding: 15px 10px;
     box-sizing: border-box;
     overflow-y: auto;
@@ -107,14 +110,11 @@
   .dropdown-content {
     display: none;
     flex-direction: column;
-    margin-top: 0;
-    padding-left: 0;
   }
 
   .dropdown-content a {
     font-size: 14px;
     padding: 6px 0;
-    border-bottom: none;
     text-align: center;
   }
 
@@ -126,9 +126,9 @@
 
 <body>
 
-<!-- 🟤 Navbar：三個元素在同一層次 -->
+<!-- 🟤 Navbar -->
 <div class="navbar">
-  <!-- 左 logo -->
+  <!-- 左邊 logo -->
   <div class="navbar-left">
     <img src="真的食破天龍國.png" alt="左圖 logo">
   </div>
@@ -138,7 +138,7 @@
     <img src="logo.png" alt="中間 logo">
   </div>
 
-  <!-- 右側漢堡 icon -->
+  <!-- 右側漢堡選單 icon -->
   <div class="hamburger" onclick="toggleMenu()">
     <div></div>
     <div></div>
@@ -146,7 +146,7 @@
   </div>
 </div>
 
-<!-- 🟤 漢堡選單內容 -->
+<!-- 🟤 側邊選單 -->
 <div class="side-menu" id="menu">
   <div class="close-btn" onclick="toggleMenu()">✕</div>
   <div class="menu-list">
@@ -176,7 +176,6 @@
   </div>
 </div>
 
-<!-- 🟤 JS -->
 <script>
   const menu = document.getElementById("menu");
   const dropdown = document.getElementById("dropdown");
