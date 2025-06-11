@@ -166,9 +166,7 @@
 </div>
   </div>
 
-
-  <!-- 🟤 側邊選單 -->
-  <div class="side-menu" id="menu">
+ <div class="side-menu" id="menu">
     <div class="close-btn" onclick="toggleMenu()">✕</div>
     <div class="menu-list">
       <a href="#">中正區</a>
@@ -184,7 +182,7 @@
       <a href="#">南港區</a>
       <a href="#">文山區</a>
 
-      <!-- 下拉選單 -->
+      <!-- ✅ 下拉選單 -->
       <div class="dropdown" id="dropdown">
         <button class="dropdown-btn" onclick="toggleDropdown()">爆破者 ▼</button>
         <div class="dropdown-content" id="dropdownContent">
@@ -197,7 +195,6 @@
     </div>
   </div>
 
-  <!-- 🟤 JS -->
   <script>
     const menu = document.getElementById("menu");
     const dropdown = document.getElementById("dropdown");
@@ -210,6 +207,7 @@
       dropdown.classList.toggle("open");
     }
   </script>
+  
 
 </body>
 
