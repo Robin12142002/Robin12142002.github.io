@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       background-color: #FFF0DC;
       font-family: "Arial", sans-serif;
@@ -93,7 +95,7 @@
       align-items: center;
       background-color: #fff;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       padding: 20px;
       transition: transform 0.2s;
       height: 140px;
@@ -183,7 +185,8 @@
       <img src="IMG_2523.jpg" alt="文章封面">
       <div class="article-content">
         <h3>拜託抵制「北投紅茶」　兩家北投在地老店推薦</h3>
-        <p>最近一兩年，掛著白底黑字招牌的「北投紅茶」開了許多分店，讓許多北投人感到莫名其妙，對於北投在地人來說，正統的古早味茶莊只有三家，分別是「蔡元益」、「高記」、「明泉」，它們從北投市場周遭發跡，是在地經營數十年的茶飲。</p>
+        <p>最近一兩年，掛著白底黑字招牌的「北投紅茶」開了許多分店，讓許多北投人感到莫名其妙，對於北投在地人來說，正統的古早味茶莊只有三家，分別是「蔡元益」、「高記」、「明泉」，它們從北投市場周遭發跡，是在地經營數十年的茶飲。
+        </p>
       </div>
     </div>
 
@@ -192,7 +195,8 @@
       <img src="IMG_2638.jpg" alt="文章封面">
       <div class="article-content">
         <h3>天母手工義式冰淇淋　頂級開心果口味必吃</h3>
-        <p>台北其實有不少Gelato店，隨便走進一家我想都不會差到哪去，但因為天母地區有歐洲學校、美國學校的關係，我更願意相信那群外國人對義式冰淇淋的品味。鄰近天母棒球場的「On the Road 義式手工冰淇淋專賣店」，提供多樣口味的冰淇淋。</p>
+        <p>台北其實有不少Gelato店，隨便走進一家我想都不會差到哪去，但因為天母地區有歐洲學校、美國學校的關係，我更願意相信那群外國人對義式冰淇淋的品味。鄰近天母棒球場的「On the Road
+          義式手工冰淇淋專賣店」，提供多樣口味的冰淇淋。</p>
       </div>
     </div>
 
@@ -223,6 +227,17 @@
       </div>
     </div>
   </div>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("open");
+    }
 
+    function toggleDropdown() {
+      const dropdown = document.getElementById("dropdown");
+      dropdown.classList.toggle("open");
+    }
+  </script>
 </body>
+
 </html>
