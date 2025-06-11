@@ -1,24 +1,47 @@
-<!-- ✅ Navbar CSS（放在 <head> 區域） -->
+<!-- ✅ 放在 <head> 區塊 -->
 <style>
+  body {
+    margin: 0;
+    background-color: #FFF0DC;
+  }
+
   .navbar {
     background-color: #543A14;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px; /* ✅ 高度固定80px */
+    height: 80px;
     display: flex;
-    justify-content: space-between; /* ✅ 左右對齊 */
-    align-items: center; /* ✅ 垂直置中 */
-    padding: 0 20px; /* ✅ 左右內距 */
+    justify-content: center; /* 先讓 navbar-center 水平置中 */
+    align-items: center;
     z-index: 1000;
   }
 
+  .navbar-left {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    align-items: center;
+  }
+
   .navbar-left img {
-    height: 60px; /* ✅ logo 高度 */
+    height: 60px;
+  }
+
+  .navbar-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-center img {
+    width: 68.31px;
+    height: 65.5px;
   }
 
   .hamburger {
+    position: absolute;
+    right: 20px;
     width: 36px;
     height: 24px;
     display: flex;
@@ -36,7 +59,7 @@
 
   .side-menu {
     position: fixed;
-    top: 80px; /* ✅ 從 navbar 下方開始 */
+    top: 80px; /* 從 navbar 下方開始 */
     right: 0;
     width: 140px;
     height: calc(100% - 80px);
@@ -107,14 +130,19 @@
   }
 </style>
 
-<!-- ✅ Navbar + 漢堡選單 HTML（放在 <body> 區域） -->
+<!-- ✅ 放在 <body> 區塊 -->
 <div class="navbar">
   <!-- 左邊 logo -->
   <div class="navbar-left">
-    <img src="真的食破天龍國.png" alt="logo">
+    <img src="真的食破天龍國.png" alt="左圖 logo">
   </div>
 
-  <!-- 右邊漢堡選單 icon -->
+  <!-- 中間 logo -->
+  <div class="navbar-center">
+    <img src="logo.png" alt="中間 logo">
+  </div>
+
+  <!-- 右邊漢堡 icon -->
   <div class="hamburger" onclick="toggleMenu()">
     <div></div>
     <div></div>
@@ -152,7 +180,7 @@
   </div>
 </div>
 
-<!-- ✅ 漢堡和下拉選單的互動 JS -->
+<!-- ✅ 漢堡與下拉選單互動 JS -->
 <script>
   const menu = document.getElementById("menu");
   const dropdown = document.getElementById("dropdown");
