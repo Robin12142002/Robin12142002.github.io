@@ -1,51 +1,49 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>美食網站</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>漢堡選單頁</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: sans-serif;
     }
 
-    /* 頁首 */
-    header {
-      background-color: #5a3c1b;
-      padding: 20px;
-      color: white;
-      font-size: 24px;
-      position: relative;
-    }
-
-    /* 漢堡按鈕 */
     .hamburger {
-      position: absolute;
-      top: 20px;
+      position: fixed;
+      top: 25px;
       right: 20px;
+      width: 36px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       cursor: pointer;
       z-index: 1001;
     }
 
     .hamburger div {
-      width: 30px;
+      width: 36px;
       height: 3px;
-      background-color: #fff;
-      margin: 6px 0;
+      background-color: #f0f0f0;
     }
 
-    /* 側邊選單 */
     .side-menu {
       position: fixed;
-      top: 60px; /* 緊貼 header 下緣 */
+      top: 60px;
       right: 0;
-      width: 160px;
-      height: calc(100% - 100px); /* 頂 60 + 底 40 空白 */
+      width: 140px; /* ✅ 縮窄寬度 */
+      height: calc(100% - 100px);
       background-color: #a36f36;
       color: white;
       z-index: 1000;
-      padding: 20px 10px;
+      padding: 15px 10px;
       box-sizing: border-box;
       overflow-y: auto;
       transform: translateX(100%);
@@ -68,35 +66,53 @@
       margin-top: 40px;
       display: flex;
       flex-direction: column;
-      align-items: center;
     }
 
-    .menu-list a {
+    .menu-list a,
+    .dropdown-btn {
       display: block;
       color: white;
       text-decoration: none;
-      padding: 10px 0;
-      width: 100%;
-      text-align: center;
+      padding: 8px 10px;
+      font-size: 15px;
+      text-align: center; /* ✅ 置中主選單文字 */
       border-bottom: 1px solid #ffffff33;
-      font-size: 16px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      width: 100%;
     }
 
-    .menu-list a:hover {
+    .menu-list a:hover,
+    .dropdown-btn:hover {
       background-color: #8c5b27;
+    }
+
+    .dropdown-content {
+      display: none;
+      flex-direction: column;
+      margin-top: 0;
+      padding-left: 0;
+    }
+
+    .dropdown-content a {
+      font-size: 14px;
+      padding: 6px 0;
+      border-bottom: none;
+      text-align: center; /* ✅ 置中子選單文字 */
+    }
+
+    .dropdown.open .dropdown-content {
+      display: flex;
     }
   </style>
 </head>
 <body>
-
-  <header>
-    網站名稱
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </header>
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 
   <div class="side-menu" id="menu">
     <div class="close-btn" onclick="toggleMenu()">✕</div>
@@ -113,24 +129,31 @@
       <a href="#">內湖區</a>
       <a href="#">南港區</a>
       <a href="#">文山區</a>
-      <a href="#">爆破者</a>
+
+      <!-- ✅ 下拉選單 -->
+      <div class="dropdown" id="dropdown">
+        <button class="dropdown-btn" onclick="toggleDropdown()">爆破者 ▼</button>
+        <div class="dropdown-content" id="dropdownContent">
+          <a href="#">邱昭華</a>
+          <a href="#">林詩祐</a>
+          <a href="#">孔德皓</a>
+          <a href="#">張恩爾</a>
+        </div>
+      </div>
     </div>
   </div>
 
   <script>
     const menu = document.getElementById("menu");
+    const dropdown = document.getElementById("dropdown");
 
     function toggleMenu() {
-      if (menu.classList.contains("open")) {
-        menu.classList.remove("open");
-      } else {
-        menu.classList.add("open");
-      }
+      menu.classList.toggle("open");
+    }
+
+    function toggleDropdown() {
+      dropdown.classList.toggle("open");
     }
   </script>
-
 </body>
 </html>
-
-
-
