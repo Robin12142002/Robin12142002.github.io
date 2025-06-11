@@ -1,214 +1,204 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Header 完整檔案</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>整合版上方列</title>
 
-  <style>
-    body {
-      background-color: #FFF0DC;
-    }
+<style>
+  body {
+    margin: 0;
+    background-color: #FFF0DC;
+    font-family: sans-serif;
+  }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  .navbar {
+    background-color: #543A14;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
 
-    .navbar {
-      background-color: #543A14;
-      padding: 30px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 80px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+  .navbar .navbar-left {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    align-items: center;
+  }
 
-    .navbar-left {
-      position: absolute;
-      left: 10px;
-      margin-top: 22px;
-      margin-left: 20px;
-    }
+  .navbar-left img {
+    height: 60px;
+    display: block;
+  }
 
-    .navbar-center {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
+  .navbar .navbar-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-    .navbar img {
-      height: 60px;
-      /* 根據需要調整 */
+  .navbar-center img {
+    height: 60px;
+    display: block;
+  }
 
-        .hamburger {
-      position: fixed;
-      top: 25px;
-      right: 20px;
-      width: 36px;
-      height: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-      z-index: 1001;
-    }
+  .hamburger {
+    position: absolute;
+    right: 20px; /* ✅ 右側留空白，避免貼邊或超出 */
+    width: 36px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+  }
 
-    .hamburger div {
-      width: 36px;
-      height: 3px;
-      background-color: #f0f0f0;
-    }
+  .hamburger div {
+    width: 36px;
+    height: 3px;
+    background-color: #f0f0f0;
+  }
 
-    .side-menu {
-      position: fixed;
-      top: 60px;
-      right: 0;
-      width: 140px; /* ✅ 縮窄寬度 */
-      height: calc(100% - 100px);
-      background-color: #a36f36;
-      color: white;
-      z-index: 1000;
-      padding: 15px 10px;
-      box-sizing: border-box;
-      overflow-y: auto;
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-    }
+  .side-menu {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    width: 140px;
+    height: calc(100% - 80px);
+    background-color: #a36f36;
+    color: white;
+    z-index: 2000;
+    padding: 15px 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
 
-    .side-menu.open {
-      transform: translateX(0);
-    }
+  .side-menu.open {
+    transform: translateX(0);
+  }
 
-    .close-btn {
-      font-size: 24px;
-      cursor: pointer;
-      position: absolute;
-      top: 10px;
-      left: 10px;
-    }
+  .close-btn {
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
 
-    .menu-list {
-      margin-top: 40px;
-      display: flex;
-      flex-direction: column;
-    }
+  .menu-list {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+  }
 
-    .menu-list a,
-    .dropdown-btn {
-      display: block;
-      color: white;
-      text-decoration: none;
-      padding: 8px 10px;
-      font-size: 15px;
-      text-align: center; /* ✅ 置中主選單文字 */
-      border-bottom: 1px solid #ffffff33;
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-    }
+  .menu-list a,
+  .dropdown-btn {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 8px 10px;
+    font-size: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ffffff33;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
 
-    .menu-list a:hover,
-    .dropdown-btn:hover {
-      background-color: #8c5b27;
-    }
+  .menu-list a:hover,
+  .dropdown-btn:hover {
+    background-color: #8c5b27;
+  }
 
-    .dropdown-content {
-      display: none;
-      flex-direction: column;
-      margin-top: 0;
-      padding-left: 0;
-    }
+  .dropdown-content {
+    display: none;
+    flex-direction: column;
+  }
 
-    .dropdown-content a {
-      font-size: 14px;
-      padding: 6px 0;
-      border-bottom: none;
-      text-align: center; /* ✅ 置中子選單文字 */
-    }
+  .dropdown-content a {
+    font-size: 14px;
+    padding: 6px 0;
+    text-align: center;
+  }
 
-    .dropdown.open .dropdown-content {
-      display: flex;
-    }
-  </style>
-
+  .dropdown.open .dropdown-content {
+    display: flex;
+  }
+</style>
 </head>
 
 <body>
 
-  <!-- 🟤 Navbar -->
-     <!-- Navbar 固定在最上方 -->
-    <div class="navbar"
-        style="position: fixed; top: 0; left: 0; width: 100%; height: 80px; background-color: #543A14; padding: 30px; display: flex; justify-content: center; align-items: center; z-index: 1000;">
-    
-        <div class="navbar">
+<!-- 🔵 Navbar：左 logo + 中 logo + 右漢堡選單 -->
+<div class="navbar">
   <div class="navbar-left">
-    <img src="真的食破天龍國.png" alt="左圖" >
+    <img src="真的食破天龍國.png" alt="左圖">
   </div>
+
   <div class="navbar-center">
     <img src="logo.png" alt="中圖">
+  </div>
 
-     <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
 </div>
-  </div>
 
- <div class="side-menu" id="menu">
-    <div class="close-btn" onclick="toggleMenu()">✕</div>
-    <div class="menu-list">
-      <a href="#">中正區</a>
-      <a href="#">大同區</a>
-      <a href="#">中山區</a>
-      <a href="#">松山區</a>
-      <a href="#">大安區</a>
-      <a href="#">萬華區</a>
-      <a href="#">信義區</a>
-      <a href="#">士林區</a>
-      <a href="#">北投區</a>
-      <a href="#">內湖區</a>
-      <a href="#">南港區</a>
-      <a href="#">文山區</a>
+<!-- 🟤 側邊欄 -->
+<div class="side-menu" id="menu">
+  <div class="close-btn" onclick="toggleMenu()">✕</div>
+  <div class="menu-list">
+    <a href="#">中正區</a>
+    <a href="#">大同區</a>
+    <a href="#">中山區</a>
+    <a href="#">松山區</a>
+    <a href="#">大安區</a>
+    <a href="#">萬華區</a>
+    <a href="#">信義區</a>
+    <a href="#">士林區</a>
+    <a href="#">北投區</a>
+    <a href="#">內湖區</a>
+    <a href="#">南港區</a>
+    <a href="#">文山區</a>
 
-      <!-- ✅ 下拉選單 -->
-      <div class="dropdown" id="dropdown">
-        <button class="dropdown-btn" onclick="toggleDropdown()">爆破者 ▼</button>
-        <div class="dropdown-content" id="dropdownContent">
-          <a href="#">邱昭華</a>
-          <a href="#">林詩祐</a>
-          <a href="#">孔德皓</a>
-          <a href="#">張恩爾</a>
-        </div>
+    <!-- 下拉選單 -->
+    <div class="dropdown" id="dropdown">
+      <button class="dropdown-btn" onclick="toggleDropdown()">爆破者 ▼</button>
+      <div class="dropdown-content" id="dropdownContent">
+        <a href="#">邱昭華</a>
+        <a href="#">林詩祐</a>
+        <a href="#">孔德皓</a>
+        <a href="#">張恩爾</a>
       </div>
     </div>
   </div>
+</div>
 
-  <script>
-    const menu = document.getElementById("menu");
-    const dropdown = document.getElementById("dropdown");
+<!-- 🟤 JS -->
+<script>
+  const menu = document.getElementById("menu");
+  const dropdown = document.getElementById("dropdown");
 
-    function toggleMenu() {
-      menu.classList.toggle("open");
-    }
+  function toggleMenu() {
+    menu.classList.toggle("open");
+  }
 
-    function toggleDropdown() {
-      dropdown.classList.toggle("open");
-    }
-  </script>
-  
+  function toggleDropdown() {
+    dropdown.classList.toggle("open");
+  }
+</script>
 
 </body>
-
 </html>
