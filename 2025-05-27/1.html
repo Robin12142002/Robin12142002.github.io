@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <title>固定搜尋欄示範</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        /* 搜尋欄容器 */
+        #search-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: #543A14;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px gray;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        /*網站名稱*/
+        .left-icon{
+            text-align: left;
+        }
+
+        /*logo*/
+        .center-icon {
+            text-align: center;
+        }
+
+        /*漢堡*/
+        .right-icon {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 固定搜尋欄 -->
+    <div id="search-bar">
+        <!--網站名稱-->
+        <div class="left-icon">
+            <img src="name1.png" alt="name">
+        </div>
+        <!-- logo -->
+        <div class="center-icon">
+            <img src="logo.png" alt="logo">
+        </div>
+
+        <!-- 漢堡 -->
+        <div class="right-icon">
+            <img src="hamburger.png" alt="hamburger">
+        </div>
+    </div>
+
+    <div style="height: 60px;"></div>
+
+
+    <video autoplay loop muted width=100% height=100%>
+        <source src="opening.mp4" type="video/mp4">
+    </video>
+
+    <div>
+        <p style="height: 20px;"></p>
+    </div>
+
+
+</body>
+
+</html>
