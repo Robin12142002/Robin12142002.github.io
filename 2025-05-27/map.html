@@ -142,22 +142,14 @@
 </head>
 
 <body>
-    <!-- 固定搜尋欄 -->
-    <div id="search-bar">
-        <!--網站名稱-->
-        <div class="left-icon">
-            <img src="name1.png" alt="name">
-        </div>
-        <!-- logo -->
-        <div class="center-icon">
-            <img src="logo.png" alt="logo">
-        </div>
-
-        <!-- 漢堡 -->
-        <div class="right-icon">
-            <img src="hamburger.png" alt="hamburger">
-        </div>
-    </div>
+    <div id="header-container"></div>
+    <script>
+      fetch('header.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        });
+    </script>
 
     <div style="height: 60px;"></div>
 
