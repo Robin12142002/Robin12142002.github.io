@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <style>
+    body {
+      background-color: #FFF0DC;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .content {
+      max-width: 700px;
+      margin: 200px auto 60px auto;
+      padding: 0 20px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+    }
+
+    .left-align {
+      display: block;
+      margin-left: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- header.html 載入位置 -->
+  <div id="header-container"></div>
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        const container = document.getElementById('header-container');
+
+        // 插入 header.html 內容
+        container.innerHTML = data;
+
+        // 重新執行其中的 script
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
+      });
+  </script>
+
+  <!-- 首圖與標題 -->
+  <div style="margin-top: 80px; position: relative;">
+    <div style="width: 100%; max-width: 1200px; height: 800px; overflow: hidden; margin: 0 auto;">
+      <img src="蛋餅1.JPG" alt="IMG_2542" style="width: 100%; height: 100%; object-fit: cover;" />
+    </div>
+
+    <!-- 白底黑字標題浮在圖片上 -->
+    <div style="
+      width: 80%;
+      max-width: 800px;
+      height: 200px;
+      background-color: white;
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 10px;
+      color: black;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    ">
+      <h2 style="
+        font-size: 36px;
+        text-align: center;
+        line-height: 1.4;
+        margin: 0;
+      ">
+       在地人激推　萬華必吃粉漿蛋餅
+      </h2>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 20px; margin-top: 20px;">
+        <a href="authorchang-index.html" target="_blank"><span>作者：張恩爾</span></a>
+        <span>發布日期：2025/6/17</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 內容區塊 -->
+  <div class="content">
+    <p>
+        當我問一位從小住在萬華的朋友最推薦的一間萬華早餐店，他二話不說馬上推薦「胖妞妞粉漿蛋餅」，能在台北這個美食一級戰區中脫穎而出，還讓在地人念念不忘，這家店肯定有過人之處。
+    </p>
+    <img src="蛋餅2.JPG" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+    <p>
+        我們點了蔥花和九層塔兩種蛋餅，當老闆娘把餐點送到桌上時我們真的被這間店的份量所驚艷到，真的非常大份！而相較於一般蛋餅，粉漿蛋餅又更有飽足感，很適合拿來當作早餐開啟美好的一天。整塊蛋餅被周圍煎到「恰恰」的麵皮所包覆，一口咬下先是吃到酥脆且帶有微微焦香的「恰恰餅皮」，迎接而來的是粉漿餅皮包裹著高麗菜、九層塔、雞蛋，高麗菜的味道雖然不突出，不過卻增添了蛋餅的口感，讓整個蛋餅更為豐富。
+    </p>
+
+    <img src="蛋餅3.JPG" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+
+    <p>
+        吃到一半如果想換換風味，很推薦在這時淋上一點店家自製的生辣椒醬油，整體不會過辣，多半是增加其香味，並且更凸顯九層塔特殊的風味。整體來說是cp值非常高的一家早餐店，唯一的缺點是座位少而且沒有冷氣，但有機會來萬華一定要試試。
+
+
+    </p>
+
+  </div>
+
+</body>
+</html>
