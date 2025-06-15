@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <title>食破天龍國｜首頁</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f0e6d2;
+    }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      margin: 90px 0 40px 0;
+      color: #5c3d0d;
+    }
+
+    .pink-section {
+      width: 1152px;
+      min-height: 688px;
+      background-color: #fddedf;
+      padding: 75px 50px 50px 50px;
+      margin: 20px auto;
+      box-sizing: border-box;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      align-content: flex-start;
+      border-radius: 6px;
+    }
+
+    .card {
+      width: 475px;
+      height: 588px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .card img {
+      width: 450px;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-top: 18px;
+      /* 圖片與卡片頂部拉開一點 */
+      margin-bottom: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      transition: transform 0.3s ease;
+    }
+
+    .card img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    .card-title {
+      font-weight: bold;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    .card-text {
+      font-size: 14px;
+      color: #333;
+      text-align: left;
+      margin-bottom: 10px;
+      /* 跟底部拉出一點距離 */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🔼 載入 header.html 內容（含 script 啟用） -->
+  <div id="header-container"></div>
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        const container = document.getElementById('header-container');
+        container.innerHTML = data;
+
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
+      });
+  </script>
+
+  <!-- 🌸 粉色區塊上方大標題 -->
+  <h2 class="section-title">大安區</h2>
+
+  <!-- 🌸 下方粉色背景區塊 -->
+  <div class="pink-section">
+
+    <!-- 🟨 白色資訊卡區塊 1 -->
+    <a href="./articlekung5-index.html" style="text-decoration: none; color: inherit;">
+      <div class="card">
+        <img src="IMG_2566.jpg" alt="拉麵">
+        <h3 class="card-title">中山站天雞麵屋坊　雞白湯拉麵濃郁順口</h3>
+        <p class="card-text">天雞麵屋坊是知名拉麵店「隱家」旗下的新品牌，去年在拉麵熱區中山站附近的巷弄開始營業。看店名就能猜出，天雞麵屋坊以雞湯拉麵為主，有濃湯也有清湯，口味選擇還算多，其中柚香慕斯雞白湯拉麵是店家主推的品項。
+          </p>
+      </div>
+    </a>
+
+
+    <!-- 🟨 白色資訊卡區塊 2 -->
+    <a href="./articlekung6-index.html" style="text-decoration: none; color: inherit;">
+      <div class="card">
+        <img src="IMG_2581.jpg" alt="中山">
+        <h3 class="card-title">中山站人氣咖啡廳　老宅改建北風社</h3>
+        <p class="card-text">
+          台北咖啡廳很多，其中「文青咖啡廳」不少，但究竟什麼樣的咖啡廳會被冠上「文青」這個前綴？是店內播放獨立樂團的音樂，書櫃擺滿人文社會書籍，或是不苟言笑的店員在幫你沖咖啡呢？我覺得北風社就是標準的文青咖啡廳，作為一種身份標籤，文青雖然帶有不迎合他人的態度，但來到北風社，並不會令人不悅，因為它的文青感不是刻意包裝，而是真真切切的日常生活。
+        </p>
+      </div>
+    </a>
+
+  </div>
+
+</body>
+
+</html>

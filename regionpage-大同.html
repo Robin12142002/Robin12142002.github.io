@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <title>食破天龍國｜首頁</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f0e6d2;
+    }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      margin: 90px 0 40px 0;
+      color: #5c3d0d;
+    }
+
+    .pink-section {
+      width: 1152px;
+      min-height: 688px;
+      background-color: #fddedf;
+      padding: 75px 50px 50px 50px;
+      margin: 20px auto;
+      box-sizing: border-box;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      align-content: flex-start;
+      border-radius: 6px;
+    }
+
+    .card {
+      width: 475px;
+      height: 588px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .card img {
+      width: 450px;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-top: 18px;
+      /* 圖片與卡片頂部拉開一點 */
+      margin-bottom: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      transition: transform 0.3s ease;
+    }
+
+    .card img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    .card-title {
+      font-weight: bold;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    .card-text {
+      font-size: 14px;
+      color: #333;
+      text-align: left;
+      margin-bottom: 10px;
+      /* 跟底部拉出一點距離 */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🔼 載入 header.html 內容（含 script 啟用） -->
+  <div id="header-container"></div>
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        const container = document.getElementById('header-container');
+        container.innerHTML = data;
+
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
+      });
+  </script>
+
+  <!-- 🌸 粉色區塊上方大標題 -->
+  <h2 class="section-title">大同區</h2>
+
+  <!-- 🌸 下方粉色背景區塊 -->
+  <div class="pink-section">
+
+    <!-- 🟨 白色資訊卡區塊 1 -->
+    <a href="./articlechiu1.html" style="text-decoration: none; color: inherit;">
+      <div class="card">
+        <img src="老牌張2.jpg" alt="拉麵">
+        <h3 class="card-title"> 老牌張豬腳飯　鹹香四溢超下飯</h3>
+        <p class="card-text">這次在延三夜市吃到的【老牌張豬腳飯】，這家的滷汁都是用幾十年老滷汁，看起來很誘人。我點的主食是腿庫飯，肉滷得很軟嫩，不用擔心會柴或咬不斷，滷汁香氣十足又很入味。
+          </p>
+      </div>
+    </a>
+
+
+    <!-- 🟨 白色資訊卡區塊 2 -->
+    <a href="./articlechiu2.html" style="text-decoration: none; color: inherit;">
+      <div class="card">
+        <img src="tea3.jpg" alt="茶">
+        <h3 class="card-title">老字號青草茶 消暑解渴超有效</h3>
+        <p class="card-text">
+          位於大稻埕民樂街的「姚德和青草號」，創立於1946年，至今已傳承三代，是當地相當具代表性的青草茶老店。雖然是老字號，但店面風格融合現代設計與復古元素，木質裝潢搭配簡約擺設，整體空間清爽舒適。
+        </p>
+      </div>
+    </a>
+
+  </div>
+
+</body>
+
+</html>
