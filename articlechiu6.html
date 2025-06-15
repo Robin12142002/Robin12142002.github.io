@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: #FFF0DC;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .content {
+            max-width: 700px;
+            margin: 200px auto 60px auto;
+            padding: 0 20px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+        }
+
+        .left-align {
+            display: block;
+            margin-left: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- header.html 載入位置 -->
+    <div id="header-container"></div>
+    <script>
+        fetch('header.html')
+            .then(res => res.text())
+            .then(data => {
+                const container = document.getElementById('header-container');
+
+                // 插入 header.html 內容
+                container.innerHTML = data;
+
+                // 重新執行其中的 script
+                const scripts = container.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    if (oldScript.src) {
+                        newScript.src = oldScript.src;
+                    } else {
+                        newScript.textContent = oldScript.textContent;
+                    }
+                    document.body.appendChild(newScript);
+                });
+            });
+    </script>
+
+    <!-- 首圖與標題 -->
+    <div style="margin-top: 80px; position: relative;">
+        <div style="width: 100%; max-width: 1200px; height: 800px; overflow: hidden; margin: 0 auto;">
+            <img src="古3.png" alt="IMG_2542" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+
+        <!-- 白底黑字標題浮在圖片上 -->
+        <div style="
+      width: 80%;
+      max-width: 800px;
+      height: 200px;
+      background-color: white;
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 10px;
+      color: black;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    ">
+            <h2 style="
+        font-size: 36px;
+        text-align: center;
+        line-height: 1.4;
+        margin: 0;
+      ">
+                太「派」了！ 古斯塔亨利精緻法派超罪惡
+            </h2>
+
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; font-size: 20px; margin-top: 20px;">
+                <a href="authorchiu-index.html" target="_blank"><span>作者：邱昭華</span></a>
+                <span>發布日期：2025/6/17</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 內容區塊 -->
+    <div class="content">
+
+        <img src="古1.webp" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+        <img src="古2.webp" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+        <p>
+            古斯塔·亨利是一家專賣法式甜鹹派的小店，隱身在內湖的靜巷中，從創業初期就以外帶甜塔起家，近年才有了實體門市。店內空間不大，但佈置精緻，有著法式烘焙坊的溫馨感與歐風小店的簡約風格，木質桌椅與櫥窗裡一顆顆小巧誘人的派塔交織出舒服的節奏。
+        </p>
+
+        <img src="古5.png" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+
+        <p>
+            我點的檸檬派外觀看似低調，一入口卻讓人驚艷。檸檬餡酸度明亮清爽，不會過嗆也不會太甜，滑順的內餡在口中綿密展開，帶著淡淡奶油香，酸香平衡得恰到好處。搭配酥脆的塔皮更是加分，咬下去有明顯層次感，完全不會軟爛，是喜歡酸味甜點的人會一吃成主顧的那種派。
+        </p>
+
+        <img src="古4.png" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+
+        <p>
+            鹹派的部分我選了菠菜乳酪口味。派皮一樣酥香不油，內餡則是混合了菠菜、起司與蛋液，口感濕潤且層次豐富。乳酪的香氣恰到好處，不會過重地搶味，反而更襯托出菠菜的清爽與奶香。整體調味偏清新，不會膩口，是很適合午餐或下午茶搭配的鹹食選擇。
+        </p>
+    </div>
+
+</body>
+
+</html>
