@@ -253,15 +253,6 @@
     </script>
     </section>
 
-    <script>
-    // 把 header.html 的內容載入到 header-container 裡
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-container').innerHTML = data;
-        })
-        .catch(error => console.error('無法載入 header:', error));
-</script>
 
 </body>
 
