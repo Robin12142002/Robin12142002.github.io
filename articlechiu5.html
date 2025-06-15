@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: #FFF0DC;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .content {
+            max-width: 700px;
+            margin: 200px auto 60px auto;
+            padding: 0 20px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+        }
+
+        .left-align {
+            display: block;
+            margin-left: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- header.html 載入位置 -->
+    <div id="header-container"></div>
+    <script>
+        fetch('header.html')
+            .then(res => res.text())
+            .then(data => {
+                const container = document.getElementById('header-container');
+
+                // 插入 header.html 內容
+                container.innerHTML = data;
+
+                // 重新執行其中的 script
+                const scripts = container.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    if (oldScript.src) {
+                        newScript.src = oldScript.src;
+                    } else {
+                        newScript.textContent = oldScript.textContent;
+                    }
+                    document.body.appendChild(newScript);
+                });
+            });
+    </script>
+
+    <!-- 首圖與標題 -->
+    <div style="margin-top: 80px; position: relative;">
+        <div style="width: 100%; max-width: 1200px; height: 800px; overflow: hidden; margin: 0 auto;">
+            <img src="王家2.png" alt="IMG_2542" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+
+        <!-- 白底黑字標題浮在圖片上 -->
+        <div style="
+      width: 80%;
+      max-width: 800px;
+      height: 200px;
+      background-color: white;
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 10px;
+      color: black;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    ">
+            <h2 style="
+        font-size: 36px;
+        text-align: center;
+        line-height: 1.4;
+        margin: 0;
+      ">
+                人氣老店王家水餃 線香飽滿超實在
+            </h2>
+
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; font-size: 20px; margin-top: 20px;">
+                <a href="authorchiu-index.html" target="_blank"><span>作者：邱昭華</span></a>
+                <span>發布日期：2025/6/17</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 內容區塊 -->
+    <div class="content">
+
+        <img src="王家4.png" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+        <p>
+            王家水餃館位在東湖路一帶，是一家開業超過三十年的老字號水餃店。雖然店面外觀不顯眼，但只要到用餐時段，總能看到排隊人潮，是附近居民與老饕們口耳相傳的水餃名店。
+        </p>
+
+        <img src="王家1.png" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+        <img src="王家2.png" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+
+        <p>
+            我點了最招牌的韭菜豬肉水餃，一入口立刻驚艷。水餃個頭不小，圓潤飽滿，皮薄Q彈不爛口，咬開後湯汁和餡料香氣一起爆發。韭菜新鮮清脆，搭配豬肉的油香恰到好處，味道濃郁但不會膩，讓人一顆接一顆停不下來。這種現包現煮的水餃，吃得出手工與用心。
+        </p>
+
+        <img src="王家3.png" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+
+        <p>
+            除了水餃，小菜部分我也很推薦。油豆腐、涼拌海帶絲和泡菜都處理得乾淨又入味，搭配水餃一起吃非常加分。如果胃口好，也可以點一碗酸辣湯或番茄牛肉湯，料多實在，喝起來也很有飽足感。
+        </p>
+
+        <p>
+            整體來說，王家水餃館是一間實實在在、沒有過多裝潢但味道到位的老店。若你喜歡吃水餃，這裡絕對值得一試。不管內用或外帶都很方便，但記得避開中午和晚餐的尖峰時間，才不用久等。
+        </p>
+    </div>
+
+</body>
+
+</html>
