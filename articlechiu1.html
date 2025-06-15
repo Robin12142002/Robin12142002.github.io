@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <style>
+    body {
+      background-color: #FFF0DC;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .content {
+      max-width: 700px;
+      margin: 200px auto 60px auto;
+      padding: 0 20px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+    }
+
+    .left-align {
+      display: block;
+      margin-left: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- header.html 載入位置 -->
+  <div id="header-container"></div>
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        const container = document.getElementById('header-container');
+
+        // 插入 header.html 內容
+        container.innerHTML = data;
+
+        // 重新執行其中的 script
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
+      });
+  </script>
+
+  <!-- 首圖與標題 -->
+  <div style="margin-top: 80px; position: relative;">
+    <div style="width: 100%; max-width: 1200px; height: 800px; overflow: hidden; margin: 0 auto;">
+      <img src="老牌張2.jpg" alt="IMG_2542" style="width: 100%; height: 100%; object-fit: cover;" />
+    </div>
+
+    <!-- 白底黑字標題浮在圖片上 -->
+    <div style="
+      width: 80%;
+      max-width: 800px;
+      height: 200px;
+      background-color: white;
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 10px;
+      color: black;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    ">
+      <h2 style="
+        font-size: 36px;
+        text-align: center;
+        line-height: 1.4;
+        margin: 0;
+      ">
+        老牌張豬腳飯　鹹香四溢超下飯
+      </h2>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 20px; margin-top: 20px;">
+        <a href="authorchang-index.html" target="_blank"><span>作者：邱昭華</span></a>
+        <span>發布日期：2025/6/17</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 內容區塊 -->
+  <div class="content">
+    <p>
+        這次在延三夜市吃到的【老牌張豬腳飯】，真的讓我印象非常深刻。這家老字號的豬腳飯店生意超級好，建議大家如果不想排太久，可以避開午餐和晚餐尖峰時段來，比較悠哉。
+    </p>
+    <img src="老牌張1.jpg" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+     <img src="老牌張2.jpg" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+    <p>
+        我點的是腿庫飯，有特別請店員幫我切瘦一點的部位，結果真的非常驚艷。肉滷得很軟嫩，不用擔心會柴或咬不斷，滷汁香氣十足又很入味。飯上記得一定要加點老滷汁，整體味道會更豐富、更下飯，光是白飯我就多吃了好幾口。
+    </p>
+
+    <img src="老牌張3.jpg" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+    <img src="" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+
+    <p>
+        小菜方面我們點了高麗菜和滷豆腐。高麗菜炒得軟中帶甜，吃起來清爽，是非常適合搭配滷肉的配角。而滷豆腐我真的超推，滷得恰到好處、口感不會過軟，沾上他們家自製辣椒醬，鹹香中帶點微辣，非常涮嘴。
+    </p>
+
+    <img src="" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+
+    <p>
+        不過要提醒的是，他們家的整體口味偏鹹，就連味噌湯也不例外，建議可以自備水或飲料搭配。整體來說，這是一家味道濃郁、有記憶點的好店，是我會想再回訪的經典台式豬腳飯。
+    </p>
+
+  </div>
+
+</body>
+</html>
