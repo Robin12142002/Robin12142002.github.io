@@ -10,36 +10,6 @@
             box-sizing: border-box;
         }
 
-        /* 搜尋欄容器 */
-        #search-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
-            background-color: #543A14;
-            padding: 10px 20px;
-            box-shadow: 0 2px 5px gray;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        /*網站名稱*/
-        .left-icon {
-            text-align: left;
-        }
-
-        /*logo*/
-        .center-icon {
-            text-align: center;
-        }
-
-        /*漢堡*/
-        .right-icon {
-            text-align: right;
-        }
-
         /*北投區*/
         #taipei-district-1:hover {
             fill: #01759A;
@@ -142,7 +112,25 @@
 </head>
 
 <body>
- 
+    <script>
+        fetch('header.html')
+          .then(res => res.text())
+          .then(data => {
+            const container = document.getElementById('header-container');
+            container.innerHTML = data;
+    
+            const scripts = container.querySelectorAll('script');
+            scripts.forEach(oldScript => {
+              const newScript = document.createElement('script');
+              if (oldScript.src) {
+                newScript.src = oldScript.src;
+              } else {
+                newScript.textContent = oldScript.textContent;
+              }
+              document.body.appendChild(newScript);
+            });
+          });
+      </script>
 
     <div style="height: 60px;"></div>
 
