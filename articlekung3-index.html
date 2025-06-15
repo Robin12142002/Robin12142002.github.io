@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <style>
+    body {
+      background-color: #FFF0DC;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .content {
+      max-width: 700px;
+      margin: 200px auto 60px auto;
+      padding: 0 20px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+    }
+
+    .left-align {
+      display: block;
+      margin-left: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- header.html 載入位置 -->
+  <div id="header-container"></div>
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        const container = document.getElementById('header-container');
+
+        // 插入 header.html 內容
+        container.innerHTML = data;
+
+        // 重新執行其中的 script
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
+      });
+  </script>
+
+  <!-- 首圖與標題 -->
+  <div style="margin-top: 80px; position: relative;">
+    <div style="width: 100%; max-width: 1200px; height: 800px; overflow: hidden; margin: 0 auto;">
+      <img src="IMG_2631.jpg" alt="IMG_2631" style="width: 100%; height: 100%; object-fit: cover;" />
+    </div>
+
+    <!-- 白底黑字標題浮在圖片上 -->
+    <div style="
+      width: 80%;
+      max-width: 800px;
+      height: 200px;
+      background-color: white;
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 10px;
+      color: black;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    ">
+      <h2 style="
+        font-size: 36px;
+        text-align: center;
+        line-height: 1.4;
+        margin: 0;
+      ">
+        酸種麵團紐約風味　通化街最強披薩插旗天母
+      </h2>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 20px; margin-top: 20px;">
+        <a href="author-index.html" target="_blank"><span>作者：孔德皓</span></a>
+        <span>發布日期：2025/6/17</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 內容區塊 -->
+  <div class="content">
+    <p>
+      台北有許多披薩名店，其中又以義式窯烤為主流。而位於通化街的The Slice Shop則主打紐約披薩，是不少人心目中的美式披薩神店。它的首家分店五月底在天母開幕，試營運不久便吸引眾多人潮，披薩供不應求，甚至讓店家調整特定口味的預訂方式。
+    </p>
+
+    <p>
+      店內空間不大，兩旁設有一排桌面，內用的客人可以在披薩出爐後站著品嚐。怕顧客弄髒手，店家也貼心地提供一次性手套，另外桌上也擺著辣油、辛香料，可以依照個人喜好加上。
+    </p>
+
+    <img src="IMG_2615.jpg" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+
+    <p>
+      The Slice Shop天母店目前販售七種口味，分別是起司、美式臘腸、辣肉丸、松板培根鳳梨、辣楓糖培根、蒔蘿酸黃瓜，以及季節限定的「魯本辣牛」。大多內用的人都點一到兩片享用，各口味價格在130～200之間，若有需要也可以向店家預訂12吋或20吋的完整披薩。
+    </p>
+
+    <img src="IMG_2613.jpg" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+
+    <p>
+      大家覺得披薩是料還是餅皮比較重要？我是覺得都很重要。The Slice Shop的酸種老麵麵團是他們家的招牌，做工複雜，發酵難以掌握，讓他們的餅皮既有脆度又保有嚼勁，是我人生吃過最喜歡的美式披薩口感。這次來吃的口味是美式臘腸與魯本辣牛，美式臘腸就是很經典的紐約風味，點這個永遠不會錯。而季節限定的魯本辣牛是The Slice Shop與在紐約的台式餐廳「886」共同發想，披薩上有起司、燻牛肉塊，撒上886開發的台式辣油混俄羅斯醬，加上德國酸菜，讓味道更加平衡豐富，不容錯過。
+    </p>
+
+  </div>
+
+</body>
+</html>
