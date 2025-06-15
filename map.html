@@ -142,22 +142,7 @@
 </head>
 
 <body>
-    <!-- 固定搜尋欄 -->
-    <div id="search-bar">
-        <!--網站名稱-->
-        <div class="left-icon">
-            <img src="真的食破天龍國.png" alt="name">
-        </div>
-        <!-- logo -->
-        <div class="center-icon">
-            <img src="logo.png" alt="logo">
-        </div>
-
-        <!-- 漢堡 -->
-        <div class="right-icon">
-            <img src="hamburger.png" alt="hamburger">
-        </div>
-    </div>
+ 
 
     <div style="height: 60px;"></div>
 
@@ -267,6 +252,17 @@
         });
     </script>
     </section>
+
+    <script>
+    // 把 header.html 的內容載入到 header-container 裡
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+        })
+        .catch(error => console.error('無法載入 header:', error));
+</script>
+
 </body>
 
 </html>
