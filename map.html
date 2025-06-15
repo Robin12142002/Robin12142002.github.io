@@ -2,162 +2,136 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        /* 搜尋欄容器 */
-        #search-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
-            background-color: #543A14;
-            padding: 10px 20px;
-            box-shadow: 0 2px 5px gray;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+    /* 各行政區 hover 效果 */
+    #taipei-district-1:hover {
+      fill: #01759A;
+      cursor: pointer;
+    }
 
-        /*網站名稱*/
-        .left-icon {
-            text-align: left;
-        }
+    #taipei-district-2:hover {
+      fill: #ADD8E6;
+      cursor: pointer;
+    }
 
-        /*logo*/
-        .center-icon {
-            text-align: center;
-        }
+    #taipei-district-3:hover {
+      fill: #63A49C;
+      cursor: pointer;
+    }
 
-        /*漢堡*/
-        .right-icon {
-            text-align: right;
-        }
+    #taipei-district-4:hover {
+      fill: #C12520;
+      cursor: pointer;
+    }
 
-        /*北投區*/
-        #taipei-district-1:hover {
-            fill: #01759A;
-            cursor: pointer;
-        }
+    #taipei-district-5:hover {
+      fill: #E87100;
+      cursor: pointer;
+    }
 
-        /*士林區*/
-        #taipei-district-2:hover {
-            fill: #ADD8E6;
-            cursor: pointer;
-        }
+    #taipei-district-6:hover {
+      fill: #6069E3;
+      cursor: pointer;
+    }
 
-        /*內湖區*/
-        #taipei-district-3:hover {
-            fill: #63A49C;
-            cursor: pointer;
-        }
+    #taipei-district-7:hover {
+      fill: #BEDF9C;
+      cursor: pointer;
+    }
 
-        /*中山區*/
-        #taipei-district-4:hover {
-            fill: #C12520;
-            cursor: pointer;
-        }
+    #taipei-district-8:hover {
+      fill: #A9775A;
+      cursor: pointer;
+    }
 
-        /*大同區*/
-        #taipei-district-5:hover {
-            fill: #E87100;
-            cursor: pointer;
-        }
+    #taipei-district-9:hover {
+      fill: #FFF8C0;
+      cursor: pointer;
+    }
 
-        /*中正區*/
-        #taipei-district-6:hover {
-            fill: #6069E3;
-            cursor: pointer;
-        }
+    #taipei-district-10:hover {
+      fill: #FFC500;
+      cursor: pointer;
+    }
 
-        /*萬華區*/
-        #taipei-district-7:hover {
-            fill: #BEDF9C;
-            cursor: pointer;
-        }
+    #taipei-district-11:hover {
+      fill: #F9B1DF;
+      cursor: pointer;
+    }
 
-        /*大安區*/
-        #taipei-district-8:hover {
-            fill: #A9775A;
-            cursor: pointer;
-        }
+    #taipei-district-12:hover {
+      fill: #BF76E7;
+      cursor: pointer;
+    }
 
-        /*信義區*/
-        #taipei-district-9:hover {
-            fill: #FFF8C0;
-            cursor: pointer;
-        }
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
 
-        /*松山區*/
-        #taipei-district-10:hover {
-            fill: #FFC500;
-            cursor: pointer;
-        }
+    .video-bg {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      display: flex;
+    }
 
-        /*南港區*/
-        #taipei-district-11:hover {
-            fill: #F9B1DF;
-            cursor: pointer;
-        }
-
-        /*文山區*/
-        #taipei-district-12:hover {
-            fill: #BF76E7;
-            cursor: pointer;
-        }
-
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-        }
-
-        .video-bg {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            object-fit: cover;
-            display: flex;
-        }
-
-        .svg-wrapper {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1;
-            height: 100vh
-        }
-    </style>
+    .svg-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      height: 100vh;
+    }
+  </style>
 </head>
 
 <body>
-    <!-- 固定搜尋欄 -->
-    <div id="search-bar">
-        <!--網站名稱-->
-        <div class="left-icon">
-            <img src="name1.png" alt="name">
-        </div>
-        <!-- logo -->
-        <div class="center-icon">
-            <img src="logo.png" alt="logo">
-        </div>
 
-        <!-- 漢堡 -->
-        <div class="right-icon">
-            <img src="hamburger.png" alt="hamburger">
-        </div>
-    </div>
+  <!-- 🔼 載入 header.html（含 menu script） -->
+  <div id="header-container"></div>
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        const container = document.getElementById('header-container');
+        container.innerHTML = data;
+
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
+      });
+  </script>
+
+  <!-- 🗺️ 這裡可以繼續放地圖互動區或背景影片區 -->
+  <div class="svg-wrapper">
+    <!-- 你原本要放的 SVG 地圖或內容應該放這裡 -->
+    <!-- 例如：
+      <object data="taipei-map.svg" type="image/svg+xml"></object>
+    -->
+  </div>
+
 
     <div style="height: 60px;"></div>
 
