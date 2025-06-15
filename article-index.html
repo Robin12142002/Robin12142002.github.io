@@ -85,31 +85,6 @@
       background-color: #F0BB78;
       border-radius: 2px;
     }
-
-    /* 下拉選單樣式 */
-    #menu {
-      display: none;
-      position: absolute;
-      top: 80px;
-      right: 0;
-      background-color: #543A14;
-      width: 200px;
-      padding: 20px;
-      box-shadow: -4px 4px 12px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-    }
-
-    #menu.open {
-      display: block;
-    }
-
-    #menu a {
-      color: white;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 15px;
-      font-size: 16px;
-    }
   </style>
 </head>
 
@@ -178,18 +153,7 @@
     </div>
   </div>
 
-  <!-- 漢堡選單按鈕 -->
-  <div class="menu-toggle" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
 
-  <!-- 下拉選單內容 -->
-  <div id="menu">
-    <a href="./index.html">首頁</a>
-    <a href="./author-index.html">所有作者</a>
-    <a href="./article-index.html">所有文章</a>
   </div>
 
   <!-- 內容區塊 -->
@@ -221,19 +185,19 @@
     <p>
       如果要將牛肉麵分為湯、麵、肉三樣元素，粟家的能力值發展得很均勻。紅燒湯頭口味偏重，還沒加入辣油就有些微的刺激；麵的部分有五種選項，可以依照喜好挑選，沒有想法的話，店家會用一般麵條煮，口感與嚼勁適中；至於牛肉則大塊軟嫩，小碗會放四、五塊，連牙口不好的年長者也能品嚐。其實粟家雖然價格稍高，但至少份量很足，正常食量的人選小碗就好，大碗真的有點太大。
     </p>
+
+    <div id="header-container"></div>
+    <script>
+      fetch('header.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        });
+    </script>
+
   </div>
 
- <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("open");
-    }
 
-    function toggleDropdown() {
-      const dropdown = document.getElementById("dropdown");
-      dropdown.classList.toggle("open");
-    }
-  </script>
 </body>
 
 </html>
