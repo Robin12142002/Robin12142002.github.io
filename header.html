@@ -131,9 +131,54 @@
     padding: 6px 0;
     text-align: center;
   }
-
   .dropdown.open .dropdown-content {
     display: flex;
+
+  @media (max-width: 768px) {
+  .navbar {
+    height: 60px;
+  }
+
+  .navbar-left img {
+    height: 40px;
+  }
+
+  .navbar-left {
+    top: 8px;
+    left: 10px;
+  }
+
+  .navbar-center img {
+    height: 45px;
+  }
+
+  .hamburger {
+    right: 10px;
+    top: 18px;
+    width: 30px;
+    height: 20px;
+  }
+
+  .hamburger div {
+    width: 30px;
+    height: 2px;
+  }
+
+  .side-menu {
+    width: 100%;
+  }
+
+  .menu-list a,
+  .dropdown-btn {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .dropdown-content a {
+    font-size: 13px;
+  }
+}
+
   }
 </style>
 </head>
