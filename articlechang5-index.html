@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <style>
+    body {
+      background-color: #FFF0DC;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .content {
+      max-width: 700px;
+      margin: 200px auto 60px auto;
+      padding: 0 20px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+    }
+
+    .left-align {
+      display: block;
+      margin-left: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- header.html 載入位置 -->
+  <div id="header-container"></div>
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        const container = document.getElementById('header-container');
+
+        // 插入 header.html 內容
+        container.innerHTML = data;
+
+        // 重新執行其中的 script
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
+      });
+  </script>
+
+  <!-- 首圖與標題 -->
+  <div style="margin-top: 80px; position: relative;">
+    <div style="width: 100%; max-width: 1200px; height: 800px; overflow: hidden; margin: 0 auto;">
+      <img src="木西製甜所.jpg" alt="IMG_2542" style="width: 100%; height: 100%; object-fit: cover;" />
+    </div>
+
+    <!-- 白底黑字標題浮在圖片上 -->
+    <div style="
+      width: 80%;
+      max-width: 800px;
+      height: 200px;
+      background-color: white;
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 10px;
+      color: black;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    ">
+      <h2 style="
+        font-size: 36px;
+        text-align: center;
+        line-height: 1.4;
+        margin: 0;
+      ">
+       南港巷弄寶藏甜品店　鹽滷豆花豆香十足
+
+      </h2>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 20px; margin-top: 20px;">
+        <a href="authorchang-index.html" target="_blank"><span>作者：張恩爾</span></a>
+        <span>發布日期：2025/6/17</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 內容區塊 -->
+  <div class="content">
+    <p>
+        光看名字還以為是政大後山的木柵製冰所，實則是位於南港中研院附近的一間豆花挫冰小店。店裡面座位不多，但裝潢乾淨明亮而且溫馨舒適，很適合在午後一人悠悠地晃進來吃點東西。
+    </p>
+    <img src="木西製甜所2.jpg" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+    <p>
+        我點了紅豆牛奶冰及招牌豆花，紅豆牛奶冰水準演出，就是一般冰店吃得到的紅豆牛奶冰。不過招牌豆花可就有其過人之處了。木西製甜所的豆花是鹽滷豆花，口感非常綿密而且豆香味十足，讓人一口接著一口。
+    </p>
+
+    <img src="木西製甜所2.jpg" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+
+    <p>
+        招牌豆花的配料有芋圓、地瓜圓和粉粿，芋圓和地瓜圓用糖熬煮而成，香氣口感都非常不錯，不過我認為搭配黑糖水對我來說會過甜，因為木西製甜所的糖水也是屬於偏甜的那種，因此與配料搭在一起的口味偏甜，若是不喜歡吃甜食的朋友須注意！不過整體來說的體驗還是非常棒，不論是店內氣氛、服務態度或者是食物本身都讓人滿意～
+
+
+    </p>
+
+  </div>
+
+</body>
+</html>

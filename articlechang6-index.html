@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <style>
+    body {
+      background-color: #FFF0DC;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .content {
+      max-width: 700px;
+      margin: 200px auto 60px auto;
+      padding: 0 20px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+    }
+
+    .left-align {
+      display: block;
+      margin-left: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- header.html 載入位置 -->
+  <div id="header-container"></div>
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        const container = document.getElementById('header-container');
+
+        // 插入 header.html 內容
+        container.innerHTML = data;
+
+        // 重新執行其中的 script
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
+      });
+  </script>
+
+  <!-- 首圖與標題 -->
+  <div style="margin-top: 80px; position: relative;">
+    <div style="width: 100%; max-width: 1200px; height: 800px; overflow: hidden; margin: 0 auto;">
+      <img src="無名麵店1.jpg" alt="IMG_2542" style="width: 100%; height: 100%; object-fit: cover;" />
+    </div>
+
+    <!-- 白底黑字標題浮在圖片上 -->
+    <div style="
+      width: 80%;
+      max-width: 800px;
+      height: 200px;
+      background-color: white;
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 10px;
+      color: black;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    ">
+      <h2 style="
+        font-size: 36px;
+        text-align: center;
+        line-height: 1.4;
+        margin: 0;
+      ">
+       南港無招牌麵店　必點皮蛋麵與炙燒三層肉
+
+
+      </h2>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 20px; margin-top: 20px;">
+        <a href="authorchang-index.html" target="_blank"><span>作者：張恩爾</span></a>
+        <span>發布日期：2025/6/17</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 內容區塊 -->
+  <div class="content">
+    <p>
+        這年頭還敢不掛招牌就做生意的，不是對自己太有自信，就是味道真的有兩把刷子。我點了這裡最具代表性的「皮蛋肉燥乾拌麵」、一份小菜拼盤，還有一碗綜合湯。
+    </p>
+    <img src="無名麵店2.jpg" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+    <p>
+        先說這碗乾拌麵，剛端上來時，只見麵上蓋著一層細碎的皮蛋塊與肉燥，再撒上滿滿的蔥花與微辣的醬汁，光看就食慾全開。一口拌勻後入口，麵條彈牙、皮蛋微苦中帶香，搭配鹹香不死鹹的肉燥，完全是神級搭配，會讓人默默吃完還想再來一份。小菜拼盤則是另一個驚喜，炙燒三層肉入口即化，經過炙燒的三層肉，油香四溢且油脂的迷人滋味滿佈口中，口感軟嫩不卡牙中帶有一些Q彈的嚼勁，搭配底下附的生洋蔥一起品嘗，起到了解膩且讓這份小菜更為順口的作用。
+    </p>
+
+    <img src="無名麵店3.jpg" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+
+    <p>
+        這是一家好吃而且cp值非常高的小吃攤，缺點是沒有冷氣，座位不多。也許不是最舒適的用餐環境，但那種「只有懂的人才知道」的秘密感。下次你來南港，不妨也來找找看這家沒招牌的小店，讓它用一碗皮蛋肉燥麵，給你一場樸實卻滿足的美食體驗。
+
+    </p>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <style>
+    body {
+      background-color: #FFF0DC;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .content {
+      max-width: 700px;
+      margin: 200px auto 60px auto;
+      padding: 0 20px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+    }
+
+    .left-align {
+      display: block;
+      margin-left: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- header.html 載入位置 -->
+  <div id="header-container"></div>
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        const container = document.getElementById('header-container');
+
+        // 插入 header.html 內容
+        container.innerHTML = data;
+
+        // 重新執行其中的 script
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
+      });
+  </script>
+
+  <!-- 首圖與標題 -->
+  <div style="margin-top: 80px; position: relative;">
+    <div style="width: 100%; max-width: 1200px; height: 800px; overflow: hidden; margin: 0 auto;">
+      <img src="有間火鍋1.jpg" alt="IMG_2542" style="width: 100%; height: 100%; object-fit: cover;" />
+    </div>
+
+    <!-- 白底黑字標題浮在圖片上 -->
+    <div style="
+      width: 80%;
+      max-width: 800px;
+      height: 200px;
+      background-color: white;
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 10px;
+      color: black;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    ">
+      <h2 style="
+        font-size: 36px;
+        text-align: center;
+        line-height: 1.4;
+        margin: 0;
+      ">
+       小巨蛋旁高CP值火鍋　特色竟是冰淇淋？
+      </h2>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 20px; margin-top: 20px;">
+        <a href="authorchang-index.html" target="_blank"><span>作者：張恩爾</span></a>
+        <span>發布日期：2025/6/17</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 內容區塊 -->
+  <div class="content">
+    <p>
+        今年五月的某一週天氣突然變得莫名涼爽，感覺又到了吃鍋的日子，位於小巨蛋附近的「有間火鍋」一直是收藏在我的美食清單可是一直都沒機會去，正好趁著這個機會來試試網路上頗受好評的平價火鍋店。
+    </p>
+    <img src="有間火鍋1.JPG" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+    <p>
+        我點的是最便宜的品項，7oz的台灣本土六白豬，原本以為位於小巨蛋附近蛋黃區地段的火鍋店CP值不會太高，沒想到肉量充足，菜盤同樣也不馬虎，該有的青菜及火鍋料都沒有少。口味的部份吃得出來豬肉品質還不錯，涮的時間不要太長一大片豬肉吃進嘴裡都是幸福的滋味，唯一的缺點是柴魚高湯較不符合我的口味，認為柴魚味過重，食材的味道會被柴魚呀過去，其他部分都是水準之上。
+    </p>
+
+    <img src="有間火鍋2.JPG" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+
+    <p>
+        最讓我驚艷的是他的冰淇淋，品牌是少見的泰國明果冰淇淋，這款冰淇淋我覺得最特別的地方是其略帶「沙沙」的口感，不是碎冰，感覺是刻意營造出這種口感，個人最推薦「巧克力奶油餅乾」口味，奶香味十足，令人印象深刻。
+
+    </p>
+
+  </div>
+
+</body>
+</html>
