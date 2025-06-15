@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <style>
+    body {
+      background-color: #FFF0DC;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .content {
+      max-width: 700px;
+      margin: 200px auto 60px auto;
+      padding: 0 20px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+    }
+
+    .left-align {
+      display: block;
+      margin-left: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- header.html 載入位置 -->
+  <div id="header-container"></div>
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        const container = document.getElementById('header-container');
+
+        // 插入 header.html 內容
+        container.innerHTML = data;
+
+        // 重新執行其中的 script
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
+      });
+  </script>
+
+  <!-- 首圖與標題 -->
+  <div style="margin-top: 80px; position: relative;">
+    <div style="width: 100%; max-width: 1200px; height: 800px; overflow: hidden; margin: 0 auto;">
+      <img src="IMG_2542.jpg" alt="IMG_2542" style="width: 100%; height: 100%; object-fit: cover;" />
+    </div>
+
+    <!-- 白底黑字標題浮在圖片上 -->
+    <div style="
+      width: 80%;
+      max-width: 800px;
+      height: 200px;
+      background-color: white;
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 10px;
+      color: black;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    ">
+      <h2 style="
+        font-size: 36px;
+        text-align: center;
+        line-height: 1.4;
+        margin: 0;
+      ">
+        廣州街夜市超強甜不辣　口味食材各藏玄機
+      </h2>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 20px; margin-top: 20px;">
+        <a href="authorchang-index.html" target="_blank"><span>作者：張恩爾</span></a>
+        <span>發布日期：2025/6/17</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 內容區塊 -->
+  <div class="content">
+    <p>
+        頂級甜不辣位於萬華的廣州街和梧州街交叉口，顯眼的黃色招牌和排隊人潮讓經過的遊客很難不去注意到這間甜不辣店。雖然店名叫做「甜不辣」，不過實際點一碗大份的之後才發現裡頭不只有甜不辣，還有許多配料如蘿蔔、貢丸、油豆腐、豬血糕及較少出現在甜不辣的水晶餃。而這些配料們也都大有來頭，甜不辣使用新鮮旗魚漿製成，分為片狀及條狀，相較於較小的條狀，我喜歡可以大口咬食的片狀，咀嚼的時候香氣佈滿整個口腔，再沾上店家特製的獨門沾醬更能帶出旗魚的鮮甜，十分過癮。
+    </p>
+    <img src="頂級甜不辣1.jpg" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+    <p>
+        貢丸也是一大亮點，雖然不大顆，但是豬肉香氣十足且Q彈有勁，讓人忍不這想一顆接著一顆吃，只有兩顆實在是太少啦！最後我覺得油豆腐和湯頭的搭配實在是非常完美，頂級甜不辣的湯頭採用大量的梨山蘿蔔熬煮，而油豆腐的孔隙正好吸飽了鮮甜的湯汁，一口咬下油豆腐香與蘿蔔湯達成完美的平衡，滋味實在很美妙。每種配料約有二至三個，吃過一輪後可以試試看他們的辣醬，他們的辣醬是屬於香氣大於辣度的辣醬，加了之後為食材增添不少層次感。
+    </p>
+
+    <img src="頂級甜不辣2.jpeg" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+
+    <p>
+        吃完所有配料後我覺得才是頂級甜不辣最「頂級」的地方，記得去跟櫃台說要「加湯」，他們的蘿蔔湯沖入碗內殘餘的辣醬，微辣但又香氣十足的湯頭真的讓人想一口喝完，不過非常燙，請小心飲用。整間店唯一的缺點是價格稍貴了些，cp值不高，不過食物的品質絕對值得你來一趟！
+
+    </p>
+
+  </div>
+
+</body>
+</html>
