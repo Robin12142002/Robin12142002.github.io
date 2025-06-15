@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <style>
+    body {
+      background-color: #FFF0DC;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .content {
+      max-width: 700px;
+      margin: 200px auto 60px auto;
+      padding: 0 20px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+    }
+
+    .left-align {
+      display: block;
+      margin-left: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- header.html 載入位置 -->
+  <div id="header-container"></div>
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        const container = document.getElementById('header-container');
+
+        // 插入 header.html 內容
+        container.innerHTML = data;
+
+        // 重新執行其中的 script
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
+      });
+  </script>
+
+  <!-- 首圖與標題 -->
+  <div style="margin-top: 80px; position: relative;">
+    <div style="width: 100%; max-width: 1200px; height: 800px; overflow: hidden; margin: 0 auto;">
+      <img src="_ (4).jpeg" alt="IMG_2523" style="width: 100%; height: 100%; object-fit: cover;" />
+    </div>
+
+    <!-- 白底黑字標題浮在圖片上 -->
+    <div style="
+      width: 80%;
+      max-width: 800px;
+      height: 200px;
+      background-color: white;
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 10px;
+      color: black;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    ">
+      <h2 style="
+        font-size: 36px;
+        text-align: center;
+        line-height: 1.4;
+        margin: 0;
+      ">
+        標題標題yoyo
+      </h2>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 20px; margin-top: 20px;">
+        <a href="author-index.html" target="_blank"><span>作者：林詩祐</span></a>
+        <span>發布日期：2025/6/17</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 內容區塊 -->
+  <div class="content">
+    <p>
+      最近一兩年，掛著白底黑字招牌的「北投紅茶」開了許多分店，散見於台灣北部，讓許多北投人感到莫名其妙，因為那些北投紅茶與北投的關係實在不大。對於北投在地人來說，正統的古早味茶莊只有三家，分別是「蔡元益」、「高記」、「明泉」，它們從北投市場周遭發跡，是在地經營數十年的茶飲。
+    </p>
+
+    <p>
+      檢視北投茶飲文化的發展歷程，蔡元益1966年在北投市場販賣紅茶、酸梅湯等傳統飲品，可說是北投最有歷史的飲料店。不過我並不是特別喜愛古早味紅茶，家裡人也幾乎沒買過蔡元益，而我常去的高記與明泉，就我觀察，生意一直好過蔡元益，每到炎炎夏日，不論是在地人或觀光客都渴望一杯透心涼的茶飲。
+    </p>
+
+    <img src="IMG_2514.jpg" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+
+    <p>
+      高記茶莊創立自1980年，品項豐富，傳統的紅茶冰、鮮奶茶類、洛神及桑椹等果汁都是熱門選擇。若是第一次來，必須點一杯「無憂茶」消暑，所謂無憂，其實取名自烏龍茶加上綠茶「無憂無慮」的諧音，店家比例調配適當，口味清甜冰涼，絕對是別的地方喝不到的味道。除此之外，高記的CP值超高，傳統茶類中杯20元，大杯將近一公升只要25元，也有一些老顧客會買袋裝的喝。
+    </p>
+
+    <img src="IMG_2538.jpg" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+
+    <p>
+      而明泉紅茶則與北投市場有一小段路程，離新北投捷運站比較靠近，每次經過，都能看到許多機車違規臨停，就為了買一杯明泉，可能是怕干擾交通，老闆的動作俐落，點完不到10秒就能拿到。
+    </p>
+
+    <p>
+      雖然紅茶是明泉的招牌，但比較多人會點它的仙草系列，明泉的仙草奶蜜雖然是加奶精，喝起來卻不會太膩，搭配軟嫩的仙草，一杯很快就喝完了。另外，最近的北投國外觀光客較多，明泉也貼心的附上英文菜單，方便看不懂中文的遊客點餐。
+    </p>
+  </div>
+
+</body>
+</html>
