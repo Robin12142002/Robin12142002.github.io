@@ -2,108 +2,130 @@
 <html lang="zh-Hant">
 
 <head>
-    <meta charset="UTF-8">
-    <title>食破天龍國｜首頁</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: sans-serif;
-            background-color: #f0e6d2;
-        }
+  <meta charset="UTF-8">
+  <title>食破天龍國｜首頁</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f0e6d2;
+    }
 
-        .section-title {
-            font-size: 36px;
-            font-weight: bold;
-            text-align: center;
-            margin: 80px 0 40px 0;
-            color: #5c3d0d;
-        }
+    .section-title {
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      margin: 80px 0 40px 0;
+      color: #5c3d0d;
+    }
 
-        .pink-section {
-            width: 1152px;
-            min-height: 688px;
-            background-color: #fddedf;
-            padding: 75px 50px 50px 50px;
-            margin: 20px auto;
-            box-sizing: border-box;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            align-content: flex-start;
-            border-radius: 6px;
-        }
+    .pink-section {
+      width: 1152px;
+      min-height: 688px;
+      background-color: #fddedf;
+      padding: 75px 50px 50px 50px;
+      margin: 20px auto;
+      box-sizing: border-box;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      align-content: flex-start;
+      border-radius: 6px;
+    }
 
-        .card {
-            width: 520px;
-            height: 588px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 10px;
-            box-sizing: border-box;
-        }
+    .card {
+      width: 520px;
+      height: 588px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      box-sizing: border-box;
+    }
 
-        .card img {
-            width: 480px;
-            height: 360px;
-            object-fit: cover;
-            border-radius: 4px;
-            margin-bottom: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    .card img {
+      width: 480px;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        .card:hover {
-            transform: scale(1.02);
-            transition: transform 0.3s ease;
-        }
+    .card:hover {
+      transform: scale(1.02);
+      transition: transform 0.3s ease;
+    }
 
-        .card img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-        }
+    .card img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
 
-        .card-title {
-            font-weight: bold;
-            margin: 10px 0;
-            text-align: center;
-        }
+    .card-title {
+      font-weight: bold;
+      margin: 10px 0;
+      text-align: center;
+    }
 
-        .card-text {
-            font-size: 14px;
-            color: #333;
-            text-align: center;
-        }
-    </style>
+    .card-text {
+      font-size: 14px;
+      color: #333;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- 🌸 粉色區塊上方大標題 -->
-    <h2 class="section-title">北投區</h2>
+  <!-- 🔼 載入 header.html 內容（含 script 啟用） -->
+  <div id="header-container"></div>
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        const container = document.getElementById('header-container');
+        container.innerHTML = data;
 
-    <!-- 🌸 下方粉色背景區塊 -->
-    <div class="pink-section">
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
+      });
+  </script>
 
-        <!-- 🟨 白色資訊卡區塊 1 -->
-        <div class="card">
-            <img src="beef.png" alt="牛舌圖片">
-            <h3 class="card-title">標題範例：日本牛舌真的很好吃我很愛</h3>
-            <p class="card-text">內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
-        </div>
+  <!-- 🌸 粉色區塊上方大標題 -->
+  <h2 class="section-title">北投區</h2>
 
-        <!-- 🟨 白色資訊卡區塊 2 -->
-        <div class="card">
-            <img src="beef.png" alt="牛舌圖片">
-            <h3 class="card-title">標題範例：日本牛舌真的很好吃我很愛</h3>
-            <p class="card-text">內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
-        </div>
+  <!-- 🌸 下方粉色背景區塊 -->
+  <div class="pink-section">
 
+    <!-- 🟨 白色資訊卡區塊 1 -->
+    <div class="card">
+      <img src="beef.png" alt="牛舌圖片">
+      <h3 class="card-title">標題範例：日本牛舌真的很好吃我很愛</h3>
+      <p class="card-text">內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
     </div>
+
+    <!-- 🟨 白色資訊卡區塊 2 -->
+    <div class="card">
+      <img src="beef.png" alt="牛舌圖片">
+      <h3 class="card-title">標題範例：日本牛舌真的很好吃我很愛</h3>
+      <p class="card-text">內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文內文</p>
+    </div>
+
+  </div>
 
 </body>
 
