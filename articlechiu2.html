@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <style>
+    body {
+      background-color: #FFF0DC;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .content {
+      max-width: 700px;
+      margin: 200px auto 60px auto;
+      padding: 0 20px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+    }
+
+    .left-align {
+      display: block;
+      margin-left: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- header.html 載入位置 -->
+  <div id="header-container"></div>
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        const container = document.getElementById('header-container');
+
+        // 插入 header.html 內容
+        container.innerHTML = data;
+
+        // 重新執行其中的 script
+        const scripts = container.querySelectorAll('script');
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
+      });
+  </script>
+
+  <!-- 首圖與標題 -->
+  <div style="margin-top: 80px; position: relative;">
+    <div style="width: 100%; max-width: 1200px; height: 800px; overflow: hidden; margin: 0 auto;">
+      <img src="老牌張2.jpg" alt="IMG_2542" style="width: 100%; height: 100%; object-fit: cover;" />
+    </div>
+
+    <!-- 白底黑字標題浮在圖片上 -->
+    <div style="
+      width: 80%;
+      max-width: 800px;
+      height: 200px;
+      background-color: white;
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 10px;
+      color: black;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    ">
+      <h2 style="
+        font-size: 36px;
+        text-align: center;
+        line-height: 1.4;
+        margin: 0;
+      ">
+        老字號青草茶 消暑解渴超有效
+      </h2>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 20px; margin-top: 20px;">
+        <a href="authorchiu-index.html" target="_blank"><span>作者：邱昭華</span></a>
+        <span>發布日期：2025/6/17</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 內容區塊 -->
+  <div class="content">
+
+    <img src="tea3.jpg" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+    <p>
+        位於大稻埕民樂街的「姚德和青草號」，創立於1946年，至今已傳承三代，是當地相當具代表性的青草茶老店。雖然是老字號，但店面風格融合現代設計與復古元素，木質裝潢搭配簡約擺設，整體空間清爽舒適，讓人走進來不僅是為了解渴，更像是一場關於草本與時間的散步體驗。
+    </p>
+
+ <img src="tea2.jpg" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+    <p>
+        店內不只是賣飲料而已，還可以看到員工拿著梯子上上下下拿藥材，這些藥材都用一個個大麻布袋包著，看起來超有歷史感，同時也可以看得出店家對於傳承藥草文化的堅持與職人精神。
+    </p>
+
+    <img src="tea1.jpg"width: 100%; border-radius: 10px; margin: 30px 0;" />
+    <img src="tea4.jpg" style="width: 100%; border-radius: 10px; margin: 30px 0;" />
+
+    <p>
+        這次我點了招牌的青草茶與蜂蜜蘆薈茶。青草茶的味道比我想像中溫和，不會過苦，帶著淡淡的草香與微微薄荷的涼感，入口清爽、回甘舒服，其實一開始喝起來很像牙膏哈哈，很適合夏天當日常飲料。蜂蜜蘆薈茶則多了幾分甜潤感，蜂蜜的自然香氣融合清爽的茶底，再加上蘆薈本身的滑順口感，喝起來層次豐富且非常順口，是我這次最喜歡的品項。
+    </p>
+
+    <p>
+        「姚德和」不只是賣茶，而是傳遞一種對青草文化的堅持與轉化。從街邊小攤轉型為風格店面，他們保留了傳統配方，也讓青草茶變得更親民易入口。來到大稻埕，不妨放慢腳步，喝一口青草香，也喝進一點老台北的溫度。
+    </p>
+
+  </div>
+
+</body>
+</html>
