@@ -17,45 +17,9 @@
       box-sizing: border-box;
     }
 
-    .navbar {
-      background-color: #543A14;
-      padding: 30px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 80px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .navbar-left {
-      position: absolute;
-      left: 10px;
-      margin-top: 22px;
-      margin-left: 20px;
-    }
-
-    .navbar-center {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .navbar img {
-      height: 60px;
-      /* 根據需要調整 */
-  </style>
-  <style>
-    }
-
     .content {
       max-width: 700px;
-      position: relative;
-      top: -60px;
-      margin: 20px auto;
+      margin: 200px auto 60px auto;
       padding: 0 20px;
       font-size: 18px;
       line-height: 1.8;
@@ -66,53 +30,26 @@
       margin-bottom: 20px;
     }
 
-    /* 漢堡選單區塊 */
-    .menu-toggle {
-      position: absolute;
-      right: 20px;
-      top: 26px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 30px;
-      height: 20px;
-      cursor: pointer;
-      z-index: 1100;
-    }
-
-    .menu-toggle span {
-      height: 3px;
-      background-color: #F0BB78;
-      border-radius: 2px;
+    .left-align {
+      display: block;
+      margin-left: 0;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Navbar 固定在最上方 -->
-  <div class="navbar"
-    style="position: fixed; top: 0; left: 0; width: 100%; height: 80px; background-color: #543A14; padding: 30px; display: flex; justify-content: center; align-items: center; z-index: 1000;">
+  <!-- header.html 載入位置 -->
+  <div id="header-container"></div>
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      });
+  </script>
 
-    <div class="navbar">
-      <div class="navbar-left">
-        <img src="真的食破天龍國.png" alt="左圖">
-      </div>
-      <div class="navbar-center">
-        <img src="logo.png" alt="中圖">
-      </div>
-    </div>
-  </div>
-
-  <style>
-    .left-align {
-      display: block;
-      margin-left: 0;
-    }
-  </style>
-  </div>
-
-
+  <!-- 首圖與標題 -->
   <div style="margin-top: 80px; position: relative;">
     <div style="width: 100%; max-width: 1200px; height: 800px; overflow: hidden; margin: 0 auto;">
       <img src="IMG_2542.jpg" alt="IMG_2542" style="width: 100%; height: 100%; object-fit: cover;">
@@ -137,35 +74,23 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     ">
       <h2 style="
-  font-size: 36px;
-  text-align: center;
-  line-height: 1.4;
-  margin: 0;
-">
+        font-size: 36px;
+        text-align: center;
+        line-height: 1.4;
+        margin: 0;
+      ">
         北投粟家牛肉麵　經典紅燒湯頭＆最頂小黃瓜
       </h2>
 
-      <div
-        style="display: flex; justify-content: space-between; align-items: center; font-size: 20px; margin-top: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 20px; margin-top: 20px;">
         <a href="./author-index.html" target="_blank"><span>作者：孔德皓</span></a>
         <span>發布日期：2025/6/17</span>
       </div>
     </div>
   </div>
 
-
-  </div>
-
   <!-- 內容區塊 -->
-
-  <div class="content" style="
-  max-width: 700px;
-  margin: 200px auto 60px auto;
-  padding: 0 20px;
-  font-size: 18px;
-  line-height: 1.8;
-  color: #333;
-">
+  <div class="content">
     <p>
       由於過往眷村文化的緣故，北投有很多知名的牛肉麵店，「吳家」、「志明」、「粟家」三家店是許多人來到北投的必訪行程。可能是因為地點優勢，吳家與志明的知名度及生意一直以來都勝過粟家，不過在我心中，粟家的地位無可取代，不是因為它的味道比別人好，單純因為粟家離我家最近。
     </p>
@@ -185,19 +110,7 @@
     <p>
       如果要將牛肉麵分為湯、麵、肉三樣元素，粟家的能力值發展得很均勻。紅燒湯頭口味偏重，還沒加入辣油就有些微的刺激；麵的部分有五種選項，可以依照喜好挑選，沒有想法的話，店家會用一般麵條煮，口感與嚼勁適中；至於牛肉則大塊軟嫩，小碗會放四、五塊，連牙口不好的年長者也能品嚐。其實粟家雖然價格稍高，但至少份量很足，正常食量的人選小碗就好，大碗真的有點太大。
     </p>
-
-    <div id="header-container"></div>
-    <script>
-      fetch('header.html')
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById('header-container').innerHTML = data;
-        });
-    </script>
-
   </div>
 
-
 </body>
-
 </html>
