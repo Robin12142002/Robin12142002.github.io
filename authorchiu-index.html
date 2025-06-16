@@ -131,10 +131,11 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
+
     .article-item a {
-  text-decoration: none;
-  color: inherit;
-}
+      text-decoration: none;
+      color: inherit;
+    }
 
     @media (max-width: 600px) {
       .article-item {
@@ -146,61 +147,65 @@
         height: auto;
       }
     }
+
     @media (max-width: 768px) {
-  .author-photo {
-    width: 180px;
-    height: 180px;
-  }
+      .author-photo {
+        width: 180px;
+        height: 180px;
+      }
 
-  .author-info h1 {
-    font-size: 24px;
-  }
+      .author-info h1 {
+        font-size: 24px;
+      }
 
-  .author-info p {
-    font-size: 16px;
-    line-height: 1.6;
-  }
-}
-@media (max-width: 600px) {
-  .article-item {
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
-    padding: 16px;
-  }
+      .author-info p {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+    }
 
-  .article-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
+    @media (max-width: 600px) {
+      .article-item {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 16px;
+      }
 
-  .article-content h3 {
-    font-size: 17px;
-  }
+      .article-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
 
-  .article-content p {
-    font-size: 14px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* 三行截斷 */
-    -webkit-box-orient: vertical;
-  }
-}
-@media (max-width: 600px) {
-  .author-section {
-    margin-top: 120px;
-    gap: 24px;
-  }
+      .article-content h3 {
+        font-size: 17px;
+      }
 
-  .section-heading {
-    font-size: 18px;
-    margin: 40px 0 20px;
-  }
+      .article-content p {
+        font-size: 14px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        /* 三行截斷 */
+        -webkit-box-orient: vertical;
+      }
+    }
 
-  .article-list {
-    padding: 0 16px;
-  }
-}
+    @media (max-width: 600px) {
+      .author-section {
+        margin-top: 120px;
+        gap: 24px;
+      }
+
+      .section-heading {
+        font-size: 18px;
+        margin: 40px 0 20px;
+      }
+
+      .article-list {
+        padding: 0 16px;
+      }
+    }
   </style>
 </head>
 
@@ -237,7 +242,9 @@
         <a href="./articlechiu1.html">
           <h3>老牌張豬腳飯　鹹香四溢超下飯</h3>
         </a>
-        <a href="./articlechang1-index.html"><p>這次在延三夜市吃到的【老牌張豬腳飯】，剛到店門口就可以看到超級大滷桶，這家的滷汁都是用幾十年老滷汁，看起來很誘人。</p></a>
+        <a href="articlechiu1.html">
+          <p>這次在延三夜市吃到的【老牌張豬腳飯】，剛到店門口就可以看到超級大滷桶，這家的滷汁都是用幾十年老滷汁，看起來很誘人。</p>
+        </a>
       </div>
     </div>
 
@@ -245,8 +252,12 @@
     <div class="article-item">
       <img src="tea3.jpg" alt="文章封面">
       <div class="article-content">
-        <h3>老字號青草茶 消暑解渴超有效</h3>
-        <p>位於大稻埕的「姚德和青草號」，創立於1946年，至今已傳承三代，是當地相當具代表性的青草茶老店。雖然是老字號，但店面風格融合現代設計與復古元素，木質裝潢搭配簡約擺設，整體空間清爽舒適。</p>
+        <a href="./articlechiu2.html">
+          <h3>老字號青草茶 消暑解渴超有效</h3>
+        </a>
+        <a href="articlechiu2.html">
+          <p>位於大稻埕的「姚德和青草號」，創立於1946年，至今已傳承三代，是當地相當具代表性的青草茶老店。雖然是老字號，但店面風格融合現代設計與復古元素，木質裝潢搭配簡約擺設，整體空間清爽舒適。</p>
+        </a>
       </div>
     </div>
 
@@ -254,8 +265,12 @@
     <div class="article-item">
       <img src="木製2.jpg" alt="文章封面">
       <div class="article-content">
-        <h3>文山區名店木柵製冰所 必點配料黑糖粉粿</h3>
-        <p>木柵製冰所是夏季限定的老店，專賣剉冰和豆花等清涼甜品，店家冬天就改賣薑母鴨。雖然芋頭系品項很出名，但我最常點的是黑糖剉冰或豆花，因為黑糖粉粿太驚艷，根本讓人一試成主顧！</p>
+        <a href="./articlechiu3.html">
+          <h3>文山區名店木柵製冰所 必點配料黑糖粉粿</h3>
+        </a>
+        <a href="articlechiu3.html">
+          <p>木柵製冰所是夏季限定的老店，專賣剉冰和豆花等清涼甜品，店家冬天就改賣薑母鴨。雖然芋頭系品項很出名，但我最常點的是黑糖剉冰或豆花，因為黑糖粉粿太驚艷，根本讓人一試成主顧！</p>
+        </a>
       </div>
     </div>
 
@@ -263,8 +278,12 @@
     <div class="article-item">
       <img src="莫蒂2.webp" alt="文章封面">
       <div class="article-content">
-        <h3>美式餐廳莫蒂早午餐不踩雷 奶昔控絕對要來</h3>
-        <p>這次到訪的莫蒂早午餐，整體給人一種輕鬆自在的美式氛圍，店內裝潢走美式工業風格，配色大膽、氛圍活潑，很適合朋友聚餐或週末早午餐的放鬆行程。</p>
+        <a href="./articlechiu4.html">
+          <h3>美式餐廳莫蒂早午餐不踩雷 奶昔控絕對要來</h3>
+        </a>
+        <a href="./articlechiu4.html">
+          <p>這次到訪的莫蒂早午餐，整體給人一種輕鬆自在的美式氛圍，店內裝潢走美式工業風格，配色大膽、氛圍活潑，很適合朋友聚餐或週末早午餐的放鬆行程。</p>
+        </a>
       </div>
     </div>
 
@@ -272,9 +291,12 @@
     <div class="article-item">
       <img src="王家2.png" alt="文章封面">
       <div class="article-content">
-        <h3>人氣老店王家水餃 餡香飽滿超實在</h3>
-        <p>王家水餃館位在東湖路一帶，是一家開業超過三十年的老字號水餃店。雖然店面外觀不顯眼，但只要到用餐時段，總能看到排隊人潮，是附近居民與老饕們口耳相傳的水餃名店。
-        </p>
+        <a href="./articlechiu5.html">
+          <h3>人氣老店王家水餃 餡香飽滿超實在</h3>
+        </a>
+        <a href="./articlechiu5.html">
+          <p>王家水餃館位在東湖路一帶，是一家開業超過三十年的老字號水餃店。雖然店面外觀不顯眼，但只要到用餐時段，總能看到排隊人潮，是附近居民與老饕們口耳相傳的水餃名店。</p>
+        </a>
       </div>
     </div>
 
@@ -282,8 +304,12 @@
     <div class="article-item">
       <img src="古3.png" alt="文章封面">
       <div class="article-content">
-        <h3>太「派」了！ 古斯塔亨利精緻法派超罪惡</h3>
-        <p>古斯塔亨利是一家專賣法式甜鹹派的小店，隱身在內湖的靜巷中，從創業初期就以外帶甜塔起家，近年才有了實體門市。店內空間不大，但佈置精緻，有著法式烘焙坊的溫馨感與歐風小店的簡約風格。</p>
+        <a href="./articlechiu6.html">
+          <h3>太「派」了！ 古斯塔亨利精緻法派超罪惡</h3>
+        </a>
+        <a href="./articlechiu6.html">
+          <p>古斯塔亨利是一家專賣法式甜鹹派的小店，隱身在內湖的靜巷中，從創業初期就以外帶甜塔起家，近年才有了實體門市。店內空間不大，但佈置精緻，有著法式烘焙坊的溫馨感與歐風小店的簡約風格。</p>
+        </a>
       </div>
     </div>
   </div>
