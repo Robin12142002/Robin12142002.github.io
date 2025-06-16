@@ -34,40 +34,58 @@
             display: block;
             margin-left: 0;
         }
+
         @media (max-width: 768px) {
-      .content {
-        margin: 120px auto 40px auto;
-        padding: 0 16px;
-        font-size: 16px;
-      }
+            .content {
+                margin: 120px auto 40px auto;
+                padding: 0 16px;
+                font-size: 16px;
+            }
 
-      div[style*="max-width: 1200px"] {
-        height: 300px !important;
-      }
+            div[style*="max-width: 1200px"] {
+                height: 300px !important;
+            }
 
-      div[style*="background-color: white"] {
-        height: auto !important;
-        padding: 16px !important;
-        width: 90% !important;
-      }
+            div[style*="background-color: white"] {
+                height: auto !important;
+                padding: 16px !important;
+                width: 90% !important;
+            }
 
-      div[style*="background-color: white"] h2 {
-        font-size: 22px !important;
-        text-align: left !important;
-      }
+            div[style*="background-color: white"] h2 {
+                font-size: 22px !important;
+                text-align: left !important;
+            }
 
-      div[style*="background-color: white"] div {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 10px;
-        font-size: 16px !important;
-      }
+            div[style*="background-color: white"] div {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 10px;
+                font-size: 16px !important;
+            }
 
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-    }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        /* 超連結預設 */
+        a {
+            color: #8C5B27;
+            text-decoration: none;
+        }
+
+        /* 滑鼠滑過 */
+        a:hover {
+            text-decoration: underline;
+            color: #6B431D;
+        }
+
+        /* 點擊過後的連結 */
+        a:visited {
+            color: #A17645;
+        }
     </style>
 </head>
 
