@@ -27,9 +27,19 @@
   z-index: 1000;
 }
 
-.navbar-left img,
 .navbar-center img {
   height: 60px;
+  display: block;
+}
+
+  .navbar-left {
+  height: 100%;
+  display: flex;
+  align-items: center; /* 垂直置中圖片 */
+}
+
+.navbar-left img {
+  max-height: 60px;   /* 控制圖片高度 */
   display: block;
 }
 
