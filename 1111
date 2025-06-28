@@ -1,0 +1,128 @@
+<!-- 捲動式圖片 + 聲音提示 + 捲動式影片合併區塊 -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>教練｜互動式專題</title>
+
+  <!-- 自訂樣式 -->
+  <style>
+    /* 選擇性啟用樣式，請視需求取消註解使用 */
+    /*
+    .storytelling-react-scrollable-image-container {
+      margin-top: -40px;
+    }
+    @media (max-width: 767px) {
+      .storytelling-react-scrollable-image-container {
+        margin-left: -3.4vw;
+      }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .storytelling-react-scrollable-image-container {
+        margin-left: calc((100vw - 512px)/2 * -1);
+      }
+    }
+    @media (min-width: 1024px) and (max-width: 1439px) {
+      .storytelling-react-scrollable-image-container {
+        margin-left: calc((100vw - 550px)/2 * -1);
+      }
+    }
+    @media (min-width: 1440px) {
+      .storytelling-react-scrollable-image-container {
+        margin-left: calc((100vw - 730px)/2 * -1);
+      }
+    }
+    */
+  </style>
+
+  <!-- 聲音提示樣式 -->
+  <style data-styled="iiYZtM nisHg sctpX nUOEg" data-styled-version="4.4.1">
+    .iiYZtM{display:flex;flex-direction:column;align-items:center;gap:16px;margin:auto;width:calc(100vw - 68px);} 
+    @media (min-width:768px){.iiYZtM{padding-left:24px;padding-right:24px;}} 
+    @media (min-width:768px) and (max-width:1023px){.iiYZtM{width:453px;}} 
+    @media (min-width:1024px) and (max-width:1439px){.iiYZtM{width:480px;}} 
+    @media (min-width:1440px){.iiYZtM{width:580px;}}
+    .sctpX{display:flex;justify-content:center;align-items:center;gap:4px;padding:4px 12px;border-radius:40px;cursor:pointer;} 
+    .sctpX > span{font-size:14px;font-family:Noto Sans TC,Sans-Serif,serif;font-weight:500;line-height:21px;} 
+    .sctpX > svg{width:18px;height:18px;} 
+    .sctpX.dark{background-color:#404040;color:#fff;} 
+    .sctpX.dark svg{fill:#fff;} 
+    .sctpX.light{background-color:#fff;color:#404040;} 
+    .sctpX.light svg{fill:#404040;} 
+    @media (hover:hover){.sctpX.dark:hover{background-color:#000;}.sctpX.light:hover{background-color:#e2e2e2;}}
+    .nisHg{margin:0;text-align:center;font-family:Noto Sans TC,Sans-Serif,serif;font-weight:400;font-size:14px;line-height:21px;color:#808080;}
+    .nUOEg{width:192px;margin-top:24px;} 
+    @media (min-width:1440px){.nUOEg{width:272px;}}
+    .elszZf{min-height:10px;}
+  </style>
+</head>
+<body>
+
+<!-- 捲動式圖片 -->
+<div id="e300c1f1-12d2-4022-a77a-dd239936b217"></div>
+
+<!-- 聲音提示區塊 -->
+<div id="190035a5-5072-452f-ad07-2cf365a56f75">
+  <div class="iiYZtM">
+    <p class="nisHg">本文含聲音敘事，開啟聲音以獲得完整閱讀體驗</p>
+    <div class="sctpX dark">
+      <span>開啟聲音</span>
+      <svg viewBox="0 0 24 24" fill="#C09662" xmlns="http://www.w3.org/2000/svg"><path d="M12 9.48366V5.00194C12 4.14669 10.9961 3.6861 10.3478 4.24392L5.41641 8.48708H3C2.44772 8.48708 2 8.93479 2 9.48707V14.6098C2 15.1621 2.44772 15.6098 3 15.6098H5.58884L10.3478 19.7046C10.9961 20.2625 12 19.8019 12 18.9466V14.6133L12 14.6098V9.48708L12 9.48366Z"></path><path d="M16.2974 4.2819C15.9009 4.1623 15.4824 4.38682 15.3628 4.78339C15.2432 5.17996 15.4677 5.5984 15.8643 5.71801C16.529 5.91849 17.1496 6.22502 17.7068 6.61889C19.3811 7.80241 20.4779 9.76964 20.4779 12C20.4779 14.9738 18.5274 17.4787 15.8643 18.2819C15.4677 18.4015 15.2432 18.82 15.3628 19.2165C15.4824 19.6131 15.9009 19.8376 16.2974 19.718C19.5874 18.7258 21.9779 15.6422 21.9779 12C21.9779 9.26726 20.6319 6.84967 18.5726 5.394C17.8863 4.90885 17.1201 4.53001 16.2974 4.2819Z"></path></svg>
+    </div>
+    <div class="nUOEg">
+      <svg viewBox="0 0 270 11" xmlns="http://www.w3.org/2000/svg">
+        <path d="...省略分隔線 SVG 路徑..." fill="rgb(192, 150, 98)"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- 捲到式聲音播放 -->
+<div id="0e4a21d5-7c3c-43e4-a44e-dfa19814dbb2">
+  <div data-twreporter-story-telling="true" data-react-scroll-to-audio="true" data-id="scroll-to-audio-39-top-entry-point" data-top-entry="true" class="elszZf">
+    <audio preload="auto" data-played="false" data-paused="true" data-muted="true" style="display:none" playsinline loop>
+      <source src="https://lab-storytelling-storage.twreporter.org/files/----------mixdown-F9cccB6H3cBG.mp3"/>
+    </audio>
+  </div>
+</div>
+
+<!-- 捲動式影片 -->
+<div id="ec2da33e-ec87-4359-8e23-b52c9397142f"></div>
+
+<!-- 所有元件的 JS -->
+<script defer crossorigin src="https://cdn.jsdelivr.net/npm/@story-telling-reporter/react-embed-code-generator@2.2.13/dist/scrollable-image.js"></script>
+<script defer crossorigin src="https://cdn.jsdelivr.net/npm/@story-telling-reporter/react-embed-code-generator@2.2.13/dist/scroll-to-audio.js"></script>
+<script defer crossorigin src="https://cdn.jsdelivr.net/npm/@story-telling-reporter/react-embed-code-generator@2.2.13/dist/scrollable-video.js"></script>
+
+<!-- 所有元件的註冊腳本 -->
+<script>
+  (function() {
+    var ns = '@story-telling-reporter/react-embed-code-generator@2.2.13';
+
+    // scrollable-image
+    window[ns] = window[ns] || {};
+    window[ns]['scrollable-image'] = window[ns]['scrollable-image'] || [];
+    window[ns]['scrollable-image'].push({ /* 原始 scrollable-image 的 data */ });
+
+    // scroll-to-audio：hintOnly
+    window[ns]['scroll-to-audio'] = window[ns]['scroll-to-audio'] || [];
+    window[ns]['scroll-to-audio'].push({ hintOnly: true, uuid: '190035a5-5072-452f-ad07-2cf365a56f75' });
+
+    // scroll-to-audio：播放音訊
+    window[ns]['scroll-to-audio'].push({
+      id: "scroll-to-audio-39",
+      theme: "twreporter",
+      audioUrls: ["https://lab-storytelling-storage.twreporter.org/files/----------mixdown-F9cccB6H3cBG.mp3"],
+      idForHintContainer: "muted-hint-id",
+      uuid: "0e4a21d5-7c3c-43e4-a44e-dfa19814dbb2"
+    });
+
+    // scrollable-video
+    window[ns]['scrollable-video'] = window[ns]['scrollable-video'] || [];
+    window[ns]['scrollable-video'].push({ /* 原始 scrollable-video 的 data */ });
+  })()
+</script>
+
+</body>
+</html>
